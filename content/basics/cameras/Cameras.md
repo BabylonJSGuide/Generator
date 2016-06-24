@@ -2,12 +2,12 @@
 ID_PAGE: 22061
 PG_TITLE: Standard Cameras
 ---
-#Babylon.js Standard Cameras #
+#Babylon.js Standard Cameras
 
 The two standard cameras are - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera.
 Please note that these cameras require the third-party file [hand.js](http://handjs.codeplex.com/releases/view/119684).
 
-##Universal Camera##
+##Universal Camera
 
 This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or gamepad depending on the input device used, 
 with no need for the contoller to be specified.
@@ -25,7 +25,7 @@ The default actions are
 
 4. gamepad - corresponds to device.
 
-###Constructing a Universal Camera###
+###Constructing a Universal Camera
 
 ```javascript
 
@@ -41,7 +41,7 @@ The default actions are
 [A Playground Example of a Universal Camera](http://www.babylonjs-playground.com/#12WBC#68)
 
 
-##Arc Rotate Camera##
+##Arc Rotate Camera
 
  This camera always points towards a given target position and can be rotated around that target with the target as the centre of rotation. 
  It can be controlled with cursors and mouse, or with touch events. 
@@ -62,7 +62,7 @@ Whether using the keyboard, mouse or touch swipes left right directions change _
 
 Panning with an ArcRotateCamera is also possible by using CTRL at the same time as the input methods above. 
 
-###Constructing an Arc Rotate Camera###
+###Constructing an Arc Rotate Camera
 
 ```javascript
 
@@ -86,13 +86,13 @@ Panning with an ArcRotateCamera is also possible by using CTRL at the same time 
 ```
 [A Playground Example of an Arc Rotate Camera](http://www.babylonjs-playground.com/#12WBC#69)
 
-##Comparisons between Cameras##
+##Comparisons between Cameras
 
 In both the above playgrounds the starting positions and targets have been set to be the same and the different way they handle controls can be seen.
 
-##Further Reading##
+##Further Reading
 
-###Intermediate###  
+###Intermediate   
 [Additional Cameras](/intermediate/Cameras.html)  
 [Customizing Camera Inputs](/intermediate/Customizing_Inputs.html)
 
