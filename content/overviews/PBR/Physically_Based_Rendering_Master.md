@@ -28,6 +28,7 @@ Here is a small reminder of the PBR material supported features:
 * HDR Texture and Seamless Cubemap (LOD extension required)
 * Environment Irradiance
 * Camera controls: Contrast and Exposure
+* Camera controls: Color Grading and Color Curves
 * Zero Light Lighting
 * Debug Controls
 
@@ -134,7 +135,7 @@ glass.alpha = 0.5;
 ### Refraction
 Refraction is a little bit like reflection (Please purists, do not kill me now, I only said a little) because it is heavily relying on the environment to change the way the material looks. Basically, if reflection could be compared to seing the sun and cloud on the surface of a lake, refraction would be seing weird shaped fish under the surface (through the water).  
 
-A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/tutorials/01._Advanced_Texturing)
+A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/tutorials/Advanced_Texturing)
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
@@ -152,8 +153,8 @@ You can still notice some reflection on your material. This is due to the energy
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
-* [Normal Map](http://doc.babylonjs.com/tutorials/01._Advanced_Texturing)
-* [Parallax](http://doc.babylonjs.com/tutorials/18._Using_parallax_mapping)
+* [Normal Map](http://doc.babylonjs.com/tutorials/Advanced_Texturing)
+* [Parallax](http://doc.babylonjs.com/tutorials/Using_parallax_mapping)
  
 ## Shadows (as the standard material)
 Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/15._Shadows)
@@ -348,6 +349,50 @@ In order to work around those issues and increase performance we integrated as p
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.cameraExposure = 0.66;
 pbr.cameraContrast = 1.66;
+```
+
+## Camera controls: Color Grading and Color Curves
+Due to the issue explained in the previous part (Camera controls: Contrast and Exposure), we are trying as much as we can to keep a one pass only forward rendering.
+
+Knowing the importance in PBR to tweak the camera to the desired effect, we integrated in Babylon JS the support for both Color Grading and Color Curves in the material. 
+
+### Color Grading
+
+For those not familiar with the concept, you can imagine color grading as converting any input color to a different output one : [Wikipedia](https://en.wikipedia.org/wiki/Colour_look-up_table).
+
+This can be used to achieve lots of different effects from sepia to sixties and pixellating. On the following demo, you can see how to change the entire scene to look like a sunset just by adding a color grading texture.
+
+The .3dl format is natively supported in BJS to allow you to directly export your LUT from your favourite edition tool.
+
+[Demo](http://www.babylonjs-playground.com/#B4PW0#2)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+var colorGrading = new BABYLON.ColorGradingTexture("textures/LateSunset.3dl", scene);
+pbr.cameraColorGradingTexture = colorGrading;
+```
+
+### Color Curves
+
+Color cuves is also always part of picture edition tools. So in order to help setting your scene exactly as desired, we embedded them directly as part of the material.
+
+You can through the new ColorCurves class specify the same setup you are used to have in your picture edition tools.
+
+[Demo](http://www.babylonjs-playground.com/#B4PW0#3)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+var curve = new BABYLON.ColorCurves();
+curve.GlobalHue = 200;
+curve.GlobalDensity = 80;
+curve.GlobalSaturation = 80;
+
+curve.HighlightsHue = 20;
+curve.HighlightsDensity = 80;
+curve.HighlightsSaturation = -80;
+
+curve.ShadowsHue = 2;
+curve.ShadowsDensity = 80;
+curve.ShadowsSaturation = 40;
+pbr.cameraColorCurves = curve;
 ```
 
 ## Zero Light Lighting

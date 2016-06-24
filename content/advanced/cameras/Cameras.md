@@ -10,7 +10,7 @@ These include the Device Orientation Camera, the Virtual Joysticks Camera and th
 
 This is a camera specifically designed to react to device orientation events such as a modern mobile device being tilted forward or back and left or right. 
 
-###Constructing a  Device Orientation Camera###
+###Constructing a Device Orientation Camera###
 
 ```javascript
 
@@ -99,7 +99,7 @@ A new camera.
 var camera = new BABYLON.VRDeviceOrientationFreeCamera ("Camera", new BABYLON.Vector3 (-6.7, 1.2, -1.3), scene, 0);
 ```
 
-##Web VR Free Camera*##
+##Web VR Free Camera##
 
 The new virtual reality camera
 

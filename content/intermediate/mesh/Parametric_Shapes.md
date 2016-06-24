@@ -62,7 +62,7 @@ instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
 [A Playground Example of Dashed Lines](http://www.babylonjs-playground.com/#165IV6#9)
 
-####LineSystem
+####LineSystem  
 A system of lines that are independent of each other and may exist in their own space.
 You must set at least the _lines_ property.
 On update, you must set the _lines_ and _instance_ properties.

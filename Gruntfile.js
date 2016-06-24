@@ -76,7 +76,10 @@ module.exports = function (grunt) {
             }
         },
         clean        : {
-            json: {
+            json: 
+				{options:{
+                    force: true
+                },
                 src    : [
                     'data/**.json',
                     '!data/static-tags.json',
@@ -103,7 +106,7 @@ module.exports = function (grunt) {
             }
         },
         execute      : {
-  /*          compileTagsClasses: {
+            compileTagsClasses: {
                 options: {
                     module: true
                 },
@@ -113,40 +116,39 @@ module.exports = function (grunt) {
                 call: function (grunt, options, async) {
                     require('./scripts/create-list/create-list-classes.js')(async());
                 }
-            }, */
+            },
             compileIndex      : {
                 options: {
                     module: true
                 },
                 src    : ['./scripts/compile-html/compile-html-index.js']
             },
-/*            
             compileWhatsNew   : {
                 options: {
                     module: true
                 },
                 src    : ['./scripts/compile-html/compile-html-whats-new.js']
-            }, */
+            },
             compileHtmlStatics: {
                 call: function (grunt, options, async) {
                     require('./scripts/compile-html/compile-html-statics')(async());
                 }
             },
-/*            compileHtmlClasses: {
+            compileHtmlClasses: {
                 call: function (grunt, options, async) {
                     require('./scripts/compile-html/compile-html-classes')(async());
                 }
-            }, */
+            },
             forwarder         : {
                 call: function (grunt, options, async) {
                     require('./scripts/create-forward')(async());
                 }
-            } /*,
+            },
             indexer           : {
                 call: function (grunt, options, async) {
                     require('./scripts/helpers/indexer/main')(async());
                 }
-            } */
+            }
         }
     });
 
@@ -158,15 +160,15 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', 'Build content and index it', [
         'clean:json',
- //       'execute:compileTagsClasses',
- //       'execute:createListClasses',
+        'execute:compileTagsClasses',
+        'execute:createListClasses',
         'execute:compileIndex',
- //       'execute:compileWhatsNew',
-//        'execute:compileHtmlClasses',
+        'execute:compileWhatsNew',
+        'execute:compileHtmlClasses',
         'execute:compileHtmlStatics',
         'execute:forwarder',
- //       'clean:indexes',
- //       'execute:indexer',
+        'clean:indexes',
+        'execute:indexer',
         'clean:tmp'
     ]);
 };

@@ -1,2 +1,1 @@
-# Generator
-Will Generate the HTML pages for the Guide
+Guide Website Generator
