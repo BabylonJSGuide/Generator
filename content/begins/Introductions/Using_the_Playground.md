@@ -3,11 +3,11 @@ ID_PAGE: 22631
 PG_TITLE: Using the Playground
 ---
 
-##Overview##
+## Overview
 ![](http://urbanproductions.com/wingy/babylon/playground/monaco/playground01.jpg)
 A Saved 'Custom' Playground Scene: http://babylonjs-playground.com/#QKQHS
 
-##The Top Menu##
+## The Top Menu
 ![](http://urbanproductions.com/wingy/babylon/playground/monaco/playground_tm01b.jpg)
 
 The playground's top menu currently contains 11 buttons:
@@ -34,14 +34,14 @@ The playground's top menu currently contains 11 buttons:
 
 **Fullscreen** - The Fullscreen button also needs very little explaining. This button causes the right-side rendering canvas to go into fullscreen mode.  Upon entering fullscreen mode, your browser will provide instructions about how to exit fullscreen mode and return to the playground's default split-screen mode.
 
-##The Editor
+## The Editor
 ![](http://urbanproductions.com/wingy/babylon/playground/monaco/playground_ed01.jpg)
 
 The playground's left-side code editor is a 'smart' editor which is based-upon the Monaco Editor.  The playground editor has many fantastic features.  It uses type-ahead features such as automatically adding matched quotes, parentheses, braces, and brackets... handy things for a programming editor.  It tries to spot programming errors, and places little icons along the right side when it sees potential syntax problems.  Telling of the many features of our editor... is beyond the scope of this tutorial.  You can learn more about the editor by viewing some of [its keyboard shortcuts](http://urbanproductions.com/wingy/babylon/playground/monaco/PGshortcuts.htm), and by simply spending some time using the playground.
 
 **oops** - One of the most important features in any programmer's editor... is UNDO and REDO, and our playground editor fully supports both of these features.  I am not familiar with the undo and redo keypresses for all OS systems, but for Windows... undo is Control-z and redo is Shift-Control-z.  You can do multiple undo and redo, as well. This is very handy, and again, we love it.  And don't forget to align your indents with tab and shift-tab.
 
-##The Rendering Canvas
+## The Rendering Canvas
 ![](http://urbanproductions.com/wingy/babylon/playground/monaco/playground_rc01.jpg)
 
 What can you say about the BabylonJS webGL rendering canvas, other than "IT IS THE COOLEST THING ON THE PLANET!".  This right-side area of the playground is where the BabylonJS webGL framework attempts to render the scene that you currently have in the editor.  Is the rendering canvas blank?  Did you click the Run button?  Have you got a camera?  Is the camera aimed correctly?  Do you have some lighting or an emissiveColor set on your mesh's material?
@@ -50,12 +50,12 @@ If your code is wrapped in a createScene() function, does it include *var scene 
 
 Are you running in free-flying mode and not wrapping your code in a createScene() function?  That is certainly allowed, but you still need a camera, a light, and a mesh shape.  These are a few things that can prevent your scene from rendering.  Study the playground demo scenes listed under the drop-down Scene Selector button, and soon you will be a BabylonJS playground expert.
 
-##Compilation Errors
+## Compilation Errors
 ![](http://urbanproductions.com/wingy/babylon/playground/monaco/playground_ce01.jpg)
 
 This is a picture of the playground's pop-up compilation error detector panel.  A compilation error is an error detected by the BabylonJS framework... after you have clicked the Run button.  It is not a syntax error detected by the editor, but the editor might ALSO detect it and possibly mark the problem line with a smale green icon along its right side. The compilation error does not always contain pertinent information about the reason for the error, yet it is still handy.  It tells you that the BabylonJS framework is not happy with something in your scene code.  After making an adjustment to your code, you need not close the compilation error pop-up.  It should close automatically at the next RUN, if the error has been corrected.
 
-##Playground URL formats
+## Playground URL formats
 When you first arrive at the BabylonJS playground web site, the URL in your browser's address field... will look like this:
 
 http://babylonjs-playground.com/
@@ -86,7 +86,7 @@ And lastly, if you want to load a specific pre-installed demo scene, such as the
 
 http://babylonjs-playground.com/?12
 
-##Notes and Goodies
+## Notes and Goodies
 
 **Maintaining Your Focus**  
 Sometimes, you will run a scene and use your cursor keys and mouse in the rendering canvas, and then want to 'focus' back to the editor... to make some more code changes.  Often, you will need to mouse-click somewhere in the editor area to give the editor focus again.  Once the editor has focus, your cursor keys will, once again, move the editor's cursor.  This happens most often when a Babylon FreeCamera is the active camera.

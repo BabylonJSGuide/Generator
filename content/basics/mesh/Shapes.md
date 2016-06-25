@@ -2,7 +2,7 @@
 PG_TITLE: Standard Shapes
 ---
 
-##Standard Shapes##
+## Standard Shapes
 
 [A Playground Example of the Standard Shapes](http://www.babylonjs-playground.com/#165IV6#1)
 
@@ -21,7 +21,7 @@ var mesh = BABYLON.Mesh.CreateMesh(name, param1, param2, ..., scene);
 ```
 is still available and will often be seen in Playground examples.
 
-###Box
+### Box
 Example :
 ```javascript
 var box = BABYLON.MeshBuilder.CreateBox("box", {height: 5}, scene);
@@ -39,7 +39,7 @@ faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-###Sphere
+### Sphere
 Example :
 ```javascript
 var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, diameterX: 3}, scene);
@@ -58,7 +58,7 @@ slice|_(number)_ ratio of the height (longitude) between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-###Cylinder or Cone
+### Cylinder or Cone
 If you set _diameterTop_ to zero, you get a cone instead of a cylinder.
 Example :
 ```javascript
@@ -80,7 +80,7 @@ arc|_(number)_ ratio of the circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-###Plane
+### Plane
 Example :
 ```javascript
 var plane = BABYLON.MeshBuilder.CreatePlane("plane", {width: 5}, scene);
@@ -96,7 +96,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
 
-###Ground
+### Ground
 Example :
 ```javascript
 var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
@@ -109,4 +109,6 @@ width|_(number)_ size of the width|1
 height|_(number)_ size of the height|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 subdivisions|_(number)_ number of square subdivisions|1
+
+
 

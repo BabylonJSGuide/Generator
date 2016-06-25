@@ -19,13 +19,13 @@ module.exports = function (grunt) {
                 //recompiles everything but doesn't reindex the search
                 tasks  : [
                     'clean:json',
-                    'execute:compileTagsClasses',
-                    'execute:createListClasses',
+                    //'execute:compileTagsClasses',
+                   // 'execute:createListClasses',
                     'execute:compileIndex',
-                    'execute:compileWhatsNew',
-                    'execute:compileHtmlClasses',
+                   // 'execute:compileWhatsNew',
+                   // 'execute:compileHtmlClasses',
                     'execute:compileHtmlStatics',
-                    'execute:forwarder'
+                   // 'execute:forwarder'
                 ],
                 //As a very heavy task, put a little debounce of two seconds
                 options: {
@@ -160,15 +160,15 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', 'Build content and index it', [
         'clean:json',
-        'execute:compileTagsClasses',
-        'execute:createListClasses',
+        //'execute:compileTagsClasses',
+       // 'execute:createListClasses',
         'execute:compileIndex',
-        'execute:compileWhatsNew',
-        'execute:compileHtmlClasses',
+       // 'execute:compileWhatsNew',
+       // 'execute:compileHtmlClasses',
         'execute:compileHtmlStatics',
-        'execute:forwarder',
-        'clean:indexes',
-        'execute:indexer',
+       // 'execute:forwarder',
+       // 'clean:indexes',
+       // 'execute:indexer',
         'clean:tmp'
     ]);
 };

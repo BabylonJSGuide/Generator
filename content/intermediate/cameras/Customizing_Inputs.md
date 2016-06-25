@@ -3,7 +3,7 @@ ID_PAGE: 29000
 PG_TITLE: 19. Customizing Camera Inputs
 ---
 
-##Inputs##
+## Inputs
 
 Every Babylon.js camera will automatically handle inputs for you... once you call the camera's attachControl function. And you can revoke the control by using the detachControl function. Most Babylon.js experts use a two-step process to activate and attach a camera:
 
@@ -22,7 +22,7 @@ myCamera.attachControl(canvas);
 ```
 By default _noPreventDefault_ is set to false, meaning that preventDefault() is automatically called on all canvas mouse clicks and touch events.
 
-#Customizing Camera Inputs#
+# Customizing Camera Inputs
 
 Some of Babylon.js's cameras respond to user inputs. This is especially true for Arc Rotate Camera and Universal Camera. 
 
@@ -39,7 +39,7 @@ var camera = new BABYLON.FreeCamera("sceneCamera", new BABYLON.Vector3(0, 1, -15
 var inputManager = camera.inputs;
 ```
 
-##Configure your inputs
+## Configure your inputs
 
 Most inputs provide settings to customize the sensibility and adapt it to your own scene.
 
@@ -51,7 +51,7 @@ camera.inputs.add(new BABYLON.FreeCameraGamepadInput());
 camera.inputs.attached.gamepad.gamepadAngularSensibility = 250;
 ```
 
-##Adding an existing input
+## Adding an existing input
 Input manager of both ArcRotateCamera and FreeCamera expose short-hand functions for adding built-in inputs.  
 
 ```javascript
@@ -66,7 +66,7 @@ var camera = new BABYLON.FreeCamera("sceneCamera", new BABYLON.Vector3(0, 1, -15
 camera.inputs.add(new BABYLON.FreeCameraGamepadInput());
 ```
 
-##Enable or disable inputs
+## Enable or disable inputs
 When you call "attachControl" on the camera, you are activating all inputs attached to the input manager. In the same way, you could turn off all inputs by calling "detachControl" on the camera.
 
 If you want to disable an input temporarily, you can call "detachControl" directly on the input... like this:
@@ -82,7 +82,7 @@ You can then call "attachInput" when you want to turn it on again.
 camera.inputs.attachInput(camera.inputs.attached.mouse);
 ```
 
-##Removing inputs
+## Removing inputs
 Sometimes you want a very specific input mechanism. The best approach in such case is probably to clear all inputs and add only those you may want in your scene.
 
 ```javascript
@@ -100,7 +100,7 @@ camera.inputs.remove(camera.inputs.attached.mouse);
 camera.inputs.removeByType("FreeCameraKeyboardMoveInput");
 ```
 
-##Implementing your own input
+## Implementing your own input
 The input must be provided to the input manager as an object instance with a few required functions. If you use TypeScript, you could implement the interface ICameraInput.
 
 Even if you don't use TypeScript for your project, you will probably understand the signature of the input from the interface
@@ -128,4 +128,6 @@ interface ICameraInput<TCamera extends BABYLON.Camera> {
     checkInputs?: () => void;
 }
 ```
+
+
 

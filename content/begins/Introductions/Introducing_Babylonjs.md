@@ -1,19 +1,18 @@
 ---
-ID_PAGE: 22621
 PG_TITLE: Introducing Babylon.js
 ---
 
-##Babylon.js WebGL Game Creation System!##
+## Babylon.js WebGL Game Creation System!
 
 Hi! Welcome to The Babylon.js Primer, an introduction to some of the things you will need to know in order to get the most out of this useful Javascript-based WebGL framework.
 What is a framework, you ask?  You can think of a framework as scaffolding for a building, allowing you to build around it without worrying about the foundation. It makes a complicated system, (WebGL,) much easier to use.
 
 We hope to teach you a large amount of information in a very quick manner.  Often there are more ways than one to accomplish a task here.  I will let you discover those other ways by yourself.  For now we will teach you the quickest and easiest ways, determined by studying the traits of other new users of Babylon.js.
 
-##The Browser##
+## The Browser
 Simply put, you will need to use a browser that supports WebGL and has Javascript activated.  Internet Explorer 11+, Firefox 4+, Google Chrome 9+, Opera 12+, etc.  WebGL is also supported by many browsers for mobile devices.  I will let you investigate the details of mobile WebGL, but know that Babylon.js has many features designed with mobile WebGL in mind.  Additionally, Babylon.js has complete support for full-immersion stereoscopic viewing and virtual reality head gear!
 
-##Useful Links##
+## Useful Links
 | Clickable Link  | What you will find |
 | ------------- | ------------- |
 | [**BabylonJS Main Website**](http://www.babylonjs.com/) |  Many great demos and useful links near the bottom |
@@ -21,13 +20,13 @@ Simply put, you will need to use a browser that supports WebGL and has Javascrip
 | [**BabylonJS Documentation**](http://doc.babylonjs.com) | Our fantastic docs site |
 | [**BabylonJS Playground**](http://babylonjs-playground.com) |  On-line white-boarding and scene-testing app |
 
-##The Big Picture##
+## The Big Picture
 
 ![](http://urbanproductions.com/wingy/babylon/misc/codepic04.jpg)
 
 That is a BIG picture, isn't it?  This is a complete Babylon.js project, using the 'single HTML file' method.  This is not the only (or best) method of setting up a proect, but it is fast and easy.  I have colored important sections of 'the big picture' and we will now examine each section individually.
 
-###The External Includes - Red Section###
+### The External Includes - Red Section
 
 'Includes' is not necessarily the best term to describe the red section of the big picture, but I will be using that term often in this tutorial.  Three external Javascript files are being included into this scene.
 
@@ -41,12 +40,12 @@ Most important, though, is the Babylon.js framework, our pride and joy.
 
 Each of these includes are JavaScript files, and so they are included-in by using HTML `<SCRIPT>` elements/tags.  The shown 'src' (source location) of these files is at the Babylon.js web site folders, but later I will tell you how to put these files on your home hard drive if you wish, and include them from there.  They load-in faster when they are 'local', but you will need to change the 'src' URL once you have saved them locally.  I will show you how to do that soon.
 
-###The CSS Styles - Blue Section###
+### The CSS Styles - Blue Section
  Notice the blue section of the big picture.  That is the CSS (Cascading Style Sheets) styles used to present the scene's web page,  and adjust its WebGL canvas to be centered and filled-out nicely in your browser.
 
 Someday, you may want to 'externalize' these styles by placing them in a separate file, possibly called styles.css.  Then you could remove the blue section from this HTML file, and use a HTML LINK element/tag to include-in that separate CSS style document.  I will not be telling you how to do that, but there are plenty of documents on the web that will show you how.  It is very easy.
 
-###The Internal Include - Green Section###
+### The Internal Include - Green Section
 
 Here is the fifth HTML SCRIPT element/tag in the big picture scene file.  We used 4 SCRIPT elements/tags to do the external includes.  This one is an INTERNAL include.  Notice that it has no 'src' URL.  That is because it is a section of Javascript code that YOU have written directly into this document.  Yes, YOU.  Now you are a Javascript programmer!
 
@@ -58,7 +57,7 @@ You need not concern yourself with that, at this point.  Externalizing your Java
 
 The JS code you see inside the green section... will be talked about soon.  Mainly, I would like you to study the big picture, and see how the single HTML file method of creating Babylon.js scenes... is structured.  I want you to try to visualize and somewhat memorize... this scene file's 'layout'.
 
-###The createScene() Function - Purple Section###
+### The createScene() Function - Purple Section
 The purple section of the big picture... is the createScene() 'function'... a Javascript 'function'.  It is the most important section of a 'single HTML file' Babylon.js scene.  
 
 Inside the createScene() function ... we will be doing the actual Babylon.js commands and directives that cause beautiful webGL to happen.  The rest of the big picture sections... are simply helpers and preparations... for the fantastic purple section... the createScene() function. 
@@ -73,7 +72,7 @@ To be honest, a light is not an absolute requirement.  If the mesh in a scene...
 
 **2. A Mesh.**  Every scene needs something to be viewed, right?  Cameras are invisible, and so are lights.  Every scene needs a mesh, or many.  There is no limit to the number of meshes in your scene.  A mesh can be one of the many shapes that are built-in to Babylon.js, or it can be a shape that you plotted yourself using Babylon's VertexData system, or it can be a mesh that has been 'imported' into the scene... from a modeling package such as Blender or 3D Studio Max.
 
-##Babylon.js Objects, Properties, Methods, and Values##
+## Babylon.js Objects, Properties, Methods, and Values
 
 You have seen some createScene functions, and you have noticed that much of the Javascript code used to make a Babylon.js scene... sets values on object properties.  To illustrate what I mean:
 
@@ -149,11 +148,11 @@ Values... are often the things that are stored in an object's properties ('pocke
 
 There are two types of value objects that are very common in Babylon.js.  They are the Vector3 value, and the Color3 value.  Vector3 and Color3 values... deserve to have their own section in this giant tutorial.  Here we go...
 
-##Vector3 and Color3 Values##
+## Vector3 and Color3 Values
 
 Two of the most-used values in Babylon.js, are Vector3 values and Color3 values.
 
-###Vector3 Values###
+### Vector3 Values
 Vector3 values take the form of...
 ``` javascript
 BABYLON.Vector3(xValue, yValue, zValue)
@@ -203,7 +202,7 @@ mySpotLight.direction = new BABYLON.Vector3(0, -1, 0);
 ```
 Generally speaking, when a Vector3 value is used to set a DIRECTION, the xValue, yValue, and zValue are each in a range of negative 1... to positive 1.  In the example above, our light is aimed negative on the y-axis... or... straight down.  Directions (directional vectors) are used for more things than just lights, but lights is a common use.  Directional vectors are not always easy things to determine the x, y, and z parameters/values for.  We have some helpful tools on our lights... that will assist you in setting directions.  You will learn about those tools in our lights tutorial.
  
-###Color3 Values###
+### Color3 Values
 Color3 values look very much like Vector3 values.  Here is an example:
 ``` javascript
 BABYLON.Color3(rValue, gValue, bValue)
@@ -257,7 +256,7 @@ myLines.color = new BABYLON.Color3(0,1,0);
 The creation of the lines object was a bit strange, but it sure was easy to make it green, using a Color3 value.  You will learn more about the lines mesh.... in our Basic Elements tutorial.  For now, I just wanted to show you that it does not use a .diffuseColor property like a box with a StandardMaterial applied, nor a .diffuse property like we used for coloring light beams.  It, instead, uses a property called .color.  Simple.
 
 
-##My New Friends - .position, .rotation, and .scaling ##
+### My New Friends - .position, .rotation, and .scaling
 
 Let's take a look at some ways of transforming a mesh:
 
@@ -287,7 +286,7 @@ Again, take some time to watch the scene.  And once more, the yellow text shows 
 
 I would like you to take note... that scaling is **for mesh only**.  For example, you can POSITION a mesh, camera, or light.  You can often ROTATE a mesh, camera, or light.  But SCALING... is for mesh.  If you stretch or shrink (scale) a camera or light, you will break its electrical parts.  (It's a joke, ok?)   There is no reason to set scaling for a camera or light.  They are invisible scene items.
 
-##Quick Downloading 'The Big 4' Externals##
+### Quick Downloading 'The Big 4' Externals
 
 Remember 'The Big Picture' far above?  In that section, I introduced you to 'The Big 4' external include files...  hand.js, cannon.js, oimo.js, and babylon.js.  Many people use GitHub version-management systems to download those files from the Babylon.js GitHub source code repository.  Some people make their own 'minified' versions of Babylon.js... using the absolute latest source code files.  Others like to be able to grab reasonably fresh versions of The Big 4... in simpler ways.
 

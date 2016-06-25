@@ -3,11 +3,11 @@ ID_PAGE: 922621
 PG_TITLE: Introducing the Playground
 ---
 
-##Babylon Playground##
+## Babylon Playground
 
 The BabylonJS Playground is an on-line white-boarding and experimenting application to assist in creating scenes for the Javascript-based BabylonJS webGL framework.  
 
-##An Example Playground##
+## An Example Playground
 
 You might want to open the playground example below in a new window or new tab, so you can switch back and forth between here and there.
 
@@ -29,7 +29,7 @@ There, you can start a new topic, tell everyone the URL to your broken playgroun
 
 This is called white-boarding.  It is an easy way to allow many people to work on your createScene function and help you figure out what is wrong.  See how the createScene function is 'portable'?  You took it from your home, to the playground, then played with it there for awhile.  Then, if needed, you clicked the playground's **SAVE** button, which gave it a URL.   Then you went to the forum and showed that URL to others, and asked for their help.  Handy, huh?  We think so.
 
-##More About The Playground##
+## More About The Playground
 Once again let's visit the saved playground scene that I sent you to, above.
 
 http://babylonjs-playground.com/#QKQHS
@@ -42,7 +42,7 @@ Wow, this is a lot of information, isn't it?  You have learned what a scene file
 
 You are becoming a Babylon.js TOOLS expert.  When I say 'tools', I mean... you have learned the things that SUPPORT the createScene() function.  Are you ready to engage in learning some things about the code that is used in a createScene() function?  I knew you were.
 
-##Diving into createScene()##
+## Diving into createScene()
  
 I would like you to visit the Babylon.js Playground once again (open in a new window or new tab, if possible), but this time we will visit its base URL at:
 

@@ -3,7 +3,7 @@ ID_PAGE: 925088
 PG_TITLE: Maths Makes Ribbons
 ---
 
-##Maths Makes Ribbons
+## Maths Makes Ribbons
 
 Mathematics is very useful for drawing paths in space and so can be applied to ribbons. 
 
@@ -18,14 +18,15 @@ var ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", { pathArray: paths },  s
 ```  
 
 
-##Maths computed paths
+## Maths computed paths
 
 The Ribbon is very adapted to elaborated maths computed meshes.    
 You can easily start from an equation to get a full volumic complex shape.     
 There are many ways to do it.  
 
 If you don't feel at ease with maths, here is a way to start :   
-###First, let's have a small recall.  
+
+### First, let's have a small recall.  
 We just set points in space. These points have got each a set of three coordinates : x, y and z.  
 We call here these points _Vector3_.  
 
@@ -53,7 +54,7 @@ _the cartesian equation y = x * x_ will give the _parametric equation :_
 You then give _k_ values from -20 to 20 for example and you  get your 40 successive _Vector3_ on the parabola. Easy, isn't it ?  
 You now know the way to fill a path with successive _Vector3_ along a math curve.  
 
-###Back to the Ribbon
+### Back to the Ribbon
 Well, we just learnt how to fill a path but a Ribbon needs many paths (okay, we can still construct a ribbon with a single path too, but it's more complex), so how do we add different paths as there is no real interest to add many times the same path ?   
 It's quite easy once you've got your parametric equation.  
 
@@ -126,7 +127,7 @@ multiply _y_ by _Math.sin(t)_ to make it wave : http://www.babylonjs-playground.
 or funnier : http://www.babylonjs-playground.com/#1HSC2O#12    
 I couldn't stop playing ...  
 
-###Summary
+### Summary
 An easy way to create math computed shapes is so :  
 
 * to choose a 2D math curve,
@@ -137,7 +138,7 @@ An easy way to create math computed shapes is so :
 * to check again with _BABYLON.Mesh.CreateLines("name", yourArray, scene)_ on each _z_ iteration,
 * to finally build your ribbon with the _paths_ array. 
 
-##From Basic Shapes to Complex Ones
+## From Basic Shapes to Complex Ones
 
 The Ribbon is very versatile. So you can redo every BabylonJS basic shapes.   
 Why would you want to do this ?  
@@ -149,7 +150,7 @@ The main rule should be :
 * if you need a computed shape having a symetry axis, then use the Tube mesh or the extrusion, which don't require many maths.
 * if you need something else, then use the Ribbon itself... and your maths skills.
 
-###Sphere
+### Sphere
 Let's try here to redo a sphere and then to modify it into something different.   
 As you've seen in the former part, you need to create many paths to build a ribbon. For a sphere, you can imagine that you stack many circles, each circle being a path.  
 To create a circle, you just set points at _x = sin(angle)_ and _z = cos(angle)_ and give _angle_ some values between 0 and 2 x PI.   
@@ -266,9 +267,3 @@ demo : http://www.babylonjs-playground.com/#E6IX1#9
 
 
 
-##Various paths concatenation  
-_make many different computed or manual pathArrays, then concatenate them_  
-
-
-
-_edition in progress_

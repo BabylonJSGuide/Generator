@@ -2,7 +2,7 @@
 PG_TITLE: Parametric Shapes
 ---
 
-###Parametric Shapes
+## Parametric Shapes
 
 The appearance of the standard shapes can generally be determined by their name.  
 The appearance of the following shapes varies depending on how they are bent, tisted and turned. How these 
@@ -12,7 +12,7 @@ All the shapes, except for the Lathe, can have their shape updated by adjusting 
 of the already created instance of the mesh. 
 
 
-####Lines
+### Lines
 Creates a continguous series of line segments from a list of points.
 You must set at least the _points_ property.
 On update, you must set the _points_ and _instance_ properties.
@@ -36,7 +36,7 @@ instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
 [A Playground Example of Lines](http://www.babylonjs-playground.com/#165IV6#8)
 
-####Dashed Lines
+### Dashed Lines
 Creates a continguous series of dashed line segments from a list of points.
 You must set at least the _points_ property.
 On update, you must set the _points_ and _instance_ properties.
@@ -62,7 +62,7 @@ instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
 [A Playground Example of Dashed Lines](http://www.babylonjs-playground.com/#165IV6#9)
 
-####LineSystem  
+### LineSystem  
 A system of lines that are independent of each other and may exist in their own space.
 You must set at least the _lines_ property.
 On update, you must set the _lines_ and _instance_ properties.
@@ -86,7 +86,7 @@ instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 
 [A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#8)
 
-####Ribbon
+### Ribbon
 You must set at least the _pathArray_ property.
 On update, you must set the _pathArray_ and _instance_ properties.
 
@@ -112,7 +112,7 @@ instance|_(LineMesh)_ an instance of a ribbon to be updated|null
 
 [A Playground Example of a Ribbon](http://www.babylonjs-playground.com/#165IV6#13)
 
-####Tube
+### Tube
 You must set at least the _path_ property.
 On update, you must set the _path_ and _instance_ properties and you can set the _radius_, _radiusFunction_ or _arc_ properties.
 
@@ -141,7 +141,7 @@ instance|_(LineMesh)_ an instance of a tube to be updated|null
 
 [A Playground Example of a Tube](http://www.babylonjs-playground.com/#165IV6#15)
 
-####Extruded Shapes
+### Extruded Shapes
 You must set at least the _shape_ and _path_ properties.
 On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _scale_ and _rotation_ properties.
 
@@ -169,7 +169,7 @@ instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 
 [A Playground Example of an Extended Shape](http://www.babylonjs-playground.com/#165IV6#16)
 
-####Custom Extruded Shapes
+### Custom Extruded Shapes
 You must set at least the _shape_ and _path_ properties.
 On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _rotationFunction_ or _scaleFunction_ properties.
 
@@ -198,12 +198,12 @@ instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 
 [A Playground Example of a Custom Extruded Shape](http://www.babylonjs-playground.com/#165IV6#17)
 
-####Lathe
+### Lathe
 You must set at least the _shape_ property.
 
 Example :
 ```javascript
-var lathe = BABYLON.MeshBuilder.Lathe("lathe", {shape: myShape}, scene);
+var lathe = BABYLON.MeshBuilder.CreateLathe("lathe", {shape: myShape}, scene);
 ```
 Properties :
 
@@ -219,3 +219,5 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 [A Playground Example of a Lathe](http://www.babylonjs-playground.com/#165IV6#12)
+
+

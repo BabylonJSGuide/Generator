@@ -62,7 +62,7 @@ Whether using the keyboard, mouse or touch swipes left right directions change _
 
 Panning with an ArcRotateCamera is also possible by using CTRL at the same time as the input methods above. 
 
-###Constructing an Arc Rotate Camera
+### Constructing an Arc Rotate Camera
 
 ```javascript
 
@@ -86,13 +86,13 @@ Panning with an ArcRotateCamera is also possible by using CTRL at the same time 
 ```
 [A Playground Example of an Arc Rotate Camera](http://www.babylonjs-playground.com/#12WBC#69)
 
-##Comparisons between Cameras
+## Comparisons between Cameras
 
 In both the above playgrounds the starting positions and targets have been set to be the same and the different way they handle controls can be seen.
 
-##Further Reading
+## Further Reading
 
-###Intermediate   
+### Intermediate   
 [Additional Cameras](/intermediate/Cameras.html)  
 [Customizing Camera Inputs](/intermediate/Customizing_Inputs.html)
 

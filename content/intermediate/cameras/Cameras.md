@@ -2,17 +2,17 @@
 ID_PAGE: 922061
 PG_TITLE: Additional Cameras
 ---
-#Additional Cameras#
+# Additional Cameras
 
 These include the legacy cameras, the Follow Camera and Anaglyph Cameras.
 
-##Legacy Cameras##
+## Legacy Cameras
 
 Three individual cameras, the Free Camera, the Touch Camera and the Gamepad Camera have now been combined into the single Universal Camera. They are however still available 
 as separate cameras and behind the 'scenes' are used in building the Universal Camera. 
 
 
-##FollowCamera##
+## FollowCamera
 
 The Follow Camera does what it says on the tin. Give it a mesh as a target and from whatever position it is currently at it will move to a goal position from which to view 
 the target. When the target moves so will the Follow Camera.
@@ -27,7 +27,7 @@ The initial position of the Follow Camera is set when it is created then the goa
 
 The speed with which the camera moves to a goal position is set through its acceleration (camera.cameraAcceleration) up to a maximum speed (camera.maxCameraSpeed).
 
-###Constructing a Follow Camera###
+### Constructing a Follow Camera
 
 ```javascript
 
@@ -60,11 +60,11 @@ camera.target = targetMesh;
 [A Playground Example of a Follow Camera following a moving target](http://www.babylonjs-playground.com/#12WBC#78)
 
 
-##AnaglyphCameras##
+## AnaglyphCameras
 
 These extend the ue of the Universal and Arc Rotate Cameras for use with red and cyan 3D glasses. They use post-processing filtering techniques. 
 
-###Constructing Anaglyph Universal Camera###.
+### Constructing Anaglyph Universal Camera
 
 ```javascript
 
@@ -73,7 +73,7 @@ var camera = new BABYLON.AnaglyphUniversalCamera("af_cam", new BABYLON.Vector3(0
 ```
 
 
-###Constructing Anaglyph ArcRotateCamera###. 
+### Constructing Anaglyph ArcRotateCamera 
 
 ```javascript
 
