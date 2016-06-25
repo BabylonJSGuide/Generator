@@ -27,21 +27,21 @@ router.get('/', function(req, res) {
     res.sendFile('./begins.html', options);
 });
 
-router.get('/:overview', function(req, res){
+router.get('/:begin', function(req, res){
     var options = {
         root: path.join(appRoot, 'public/html')
     };
 
-    var overview = req.params.overview;
+    var begin = req.params.begin;
 
-    fs.exists(path.join('public/html/begins/', overview +'.html'), function (exists) {
+    fs.exists(path.join('public/html/begins/', begin +'.html'), function (exists) {
         if (exists) {
             res.status(200);
             res.set({
                 'Cache-Control': 'no-cache',
                 'Content-type':'text/html'
             });
-            res.sendFile('./begins/'+ overview +'.html', options);
+            res.sendFile('./begins/'+ begin +'.html', options);
         } else {
             res.status(404).render('errorpages/404');
         }
