@@ -111,4 +111,14 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 subdivisions|_(number)_ number of square subdivisions|1
 
 
+## Further Reading
 
+### Intermediate   
+[Additional Shapes](/intermediate/Shapes.html)  
+[Parametric Shapes](/intermediate/Parametric_Shapes.html)
+[Polyhedra Shapes](/intermediate/Polyhedra_Shapes.html)
+
+### Advanced   
+[Ribbons In Detail](/advanced/Ribbons_In_Detail.html)
+[Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)
+[Decals](/advanced/Decals.html) 

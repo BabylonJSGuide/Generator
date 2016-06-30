@@ -98,7 +98,16 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 NOTE:  this uses the legacy method of BABYLON.Mesh.CreateTiledGround;
 
 
+## Further Reading
 
+### Intermediate   
+[Parametric Shapes](/intermediate/Parametric_Shapes.html)
+[Polyhedra Shapes](/intermediate/Polyhedra_Shapes.html)
+
+### Advanced   
+[Ribbons In Detail](/advanced/Ribbons_In_Detail.html)
+[Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)
+[Decals](/advanced/Decals.html) 
 
 
 

@@ -67,4 +67,12 @@ The same rules and workarounds apply to the _closePath_ parameter.
 [As above with Texture](http://www.babylonjs-playground.com/#3XMWZ#51).  
 
 
+## Further Reading
 
+### Intermediate     
+[Parametric Shapes](/intermediate/Parametric_Shapes.html)
+[Polyhedra Shapes](/intermediate/Polyhedra_Shapes.html)
+
+### Advanced   
+[Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)
+[Decals](/advanced/Decals.html) 

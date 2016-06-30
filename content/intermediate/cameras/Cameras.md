@@ -62,7 +62,7 @@ camera.target = targetMesh;
 
 ## AnaglyphCameras
 
-These extend the ue of the Universal and Arc Rotate Cameras for use with red and cyan 3D glasses. They use post-processing filtering techniques. 
+These extend the use of the Universal and Arc Rotate Cameras for use with red and cyan 3D glasses. They use post-processing filtering techniques. 
 
 ### Constructing Anaglyph Universal Camera
 
@@ -85,3 +85,10 @@ The _eyeSpace_ parameter sets the amount of shift between the left eye view and 
 
 You can learn all about anaglyphs by visiting a [Wikipedia page that explains it thoroughly](http://en.wikipedia.org/wiki/Anaglyph_3D). 
 
+## Further Reading
+
+### Intermediate   
+[Customizing Camera Inputs](/intermediate/Customizing_Inputs.html)
+
+### Advanced   
+[Orientation and 3D Cameras](/advanced/Cameras.html) 

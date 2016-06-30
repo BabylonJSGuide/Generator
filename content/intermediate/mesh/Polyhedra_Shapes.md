@@ -85,3 +85,14 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 An example of an IcoSphere: http://www.babylonjs-playground.com/#24DUYD#1
 
 and one with animation: http://www.babylonjs-playground.com/#E3TVT#1
+
+## Further Reading
+
+### Intermediate   
+[Additional Shapes](/intermediate/Shapes.html)  
+[Parametric Shapes](/intermediate/Parametric_Shapes.html)
+
+### Advanced   
+[Ribbons In Detail](/advanced/Ribbons_In_Detail.html)
+[Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)
+[Decals](/advanced/Decals.html) 

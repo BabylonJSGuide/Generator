@@ -265,5 +265,13 @@ for (var i = 0; i < pi2; i += step ) {
 ```
 demo : http://www.babylonjs-playground.com/#E6IX1#9  
 
+## Further Reading
 
+### Intermediate    
+[Parametric Shapes](/intermediate/Parametric_Shapes.html)
+[Polyhedra Shapes](/intermediate/Polyhedra_Shapes.html)
+
+### Advanced   
+[Ribbons In Detail](/advanced/Ribbons_In_Detail.html)
+[Decals](/advanced/Decals.html) 
 

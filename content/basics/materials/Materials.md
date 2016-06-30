@@ -1,10 +1,9 @@
 ---
 ID_PAGE: 22051
-PG_TITLE: 04. Materials
+PG_TITLE: 04. Color and texture
 ---
-## Introduction
-
-Now that you can create different basic mesh elements anywhere in the scene, we are going to give those meshes some materials, to define how those mesh look.
+# Materials
+Materials allow you to cover your meshes in color and texture.
 
 ![Elements](http://www.babylonjs.com/tutorials/04%20-%20Materials/04.png)
 
