@@ -49,17 +49,6 @@
       ]
    },
    {
-     "title": "Materials",
-      "name": "materials",
-      "desc": "Basic Materials",
-      "files": [
-        {
-          "title": "Colors and Textures",
-          "filename": "Materials"
-        }
-      ]
-   },
-   {
      "title": "Lights",
       "name": "lights",
       "desc": "Basic Lights",
@@ -67,6 +56,17 @@
         {
           "title": "Lights",
           "filename": "Lights"
+        }
+      ]
+   },
+   {
+     "title": "Materials",
+      "name": "materials",
+      "desc": "Basic Materials",
+      "files": [
+        {
+          "title": "Colors and Textures",
+          "filename": "Materials"
         }
       ]
    }

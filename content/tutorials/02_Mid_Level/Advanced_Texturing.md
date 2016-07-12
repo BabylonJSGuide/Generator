@@ -35,31 +35,6 @@ Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory 
 You can see this nice advanced texturing technique... in [this playground scene](http://babylonjs-playground.azurewebsites.net/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/FresnelParameters)-enhanced [playground scene](http://babylonjs-playground.azurewebsites.net/#SBTYP), as well.
 
 
-* **Bump Mapping**
-
-Bump mapping is a technique in computer graphics to make a rendered surface look more realistic without modifying surface geometry. This is only a texture modification, so computation is the same but rendering is much better, have a look:
-
-![bumpMap](http://www.babylonjs.com/tutorials/Advanced%20Texturing/1.png)
-
-The bump texture simulates bumps and dents using a map called a normal map.
-
-![normalMap](http://www.babylonjs.com/tutorials/Advanced%20Texturing/normalMap.jpg)
-
-_A normal map_
-
-And now, let’s code this amazing texture within two lines of JavaScript: first we create a new standard material, and then, simply declare a new bump texture:
-```javascript
-var bumpMaterial = new BABYLON.StandardMaterial("texture1", scene);
-bumpMaterial.bumpTexture = new BABYLON.Texture("normalMap.jpg", scene);
-```
-
-That’s it! The bump texture disturbs/perturbs the normal to produce a result like this, where you should recognize our normal map:
-
-![finalResult](http://www.babylonjs.com/tutorials/Advanced%20Texturing/2.png)
-
-_Resulting gorgeous bumpy sphere_
-
-Please note that by default, normal maps are considered to be following DirectX format. If you want to provide a different convention normal maps, you can just set ```material.invertNormalMapX = true``` or ```material.invertNormalMapY = true```.
 
 * **Video**
 

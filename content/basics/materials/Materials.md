@@ -2,180 +2,149 @@
 ID_PAGE: 22051
 PG_TITLE: 04. Color and texture
 ---
+
 # Materials
-Materials allow you to cover your meshes in color and texture.
+Materials allow you to cover your meshes in color and texture and they need light to be seen. One material can be used to cover as many meshes as you wish.
 
-![Elements](http://www.babylonjs.com/tutorials/04%20-%20Materials/04.png)
 
-[**Playground Demo Scene 4 - Materials**](http://www.babylonjs.com/playground/?4)
+## Reactions to light
+Whether the material is a color or a texture there are different ways it can react to light.
 
-## How can I do this ?
-We are so adept at making createScene functions that we can do it in our sleep, right? So let's get rolling with an omni-directional PointLight and an orbiting ArcRotateCamera.  After that, we'll start making some basic mesh elements to test our materials upon.
+1. Diffuse - the basic color or texture of the material;
+2. Specular - the highlight given to the material;
+3. Emissive - the color or texture of the material as if self lit;
+4. Ambient - the color or texture of the material lit by the environmental background lighting.
 
+Diffuse and Specular material require a [light source](/basics/Lights) to be created.  
+Ambient color requires the ambient color of the scene to be set, giving the environmental background lighting.
 ```javascript
-function createScene() {
-    var scene = new BABYLON.Scene(engine);
-    var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
-    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, new BABYLON.Vector3.Zero(), scene);
-
-    //Creation of spheres
-    var sphere1 = BABYLON.Mesh.CreateSphere("Sphere1", 10.0, 6.0, scene);
-    var sphere2 = BABYLON.Mesh.CreateSphere("Sphere2", 2.0, 7.0, scene);
-    var sphere3 = BABYLON.Mesh.CreateSphere("Sphere3", 10.0, 8.0, scene);
-[…]
-    //Positioning the meshes
-    sphere1.position.x = -40;
-    sphere2.position.x = -30;
+scene.ambientColor = new BABYLON.Color3(1, 1, 1);
 ```
 
-So far, you only have some grey-colored meshes. How drab! To apply a material to them, you will need to create a new material object like this:
-```javascript
-var materialSphere1 = new BABYLON.StandardMaterial("texture1", scene);
-```
-
-And apply this material to the object of your choice, e.g.:
-```javascript
-sphere1.material = materialSphere1;
-```
-Or, create and apply all in one step:
-```javascript
-sphere1.material = new BABYLON.StandardMaterial("texture1", scene);
-```
-
-“I tested my scene, and …nothing changed…”
-
-Exactly, because this material is the default one. You have to customize it as you like. You won’t change the mesh itself, but just the material.
-
-“So how can I adjust my material to give the perfect look to my object?”
-
-That is done by setting the properties on the material.  Let's see what they are:
-
-* **Transparency** (alpha channel)
-
-Alpha compositing and transparency in general can be a bit complex. A specific article about that can be found [here](page.php?p=25100). You might also want to read [the wikipedia page about it](http://en.wikipedia.org/wiki/Alpha_compositing).  You will encounter even more uses for it when you enjoy the BabylonJS particle system, and BabylonJS sprites system. 
-
- Alpha transparency, written in percent (%), can be applied to a material in this way:
-```javascript
-materialSphere1.alpha = 0.5;
-```
-
-* **Diffuse**
-
-The diffuse is the native color of the object material once it is lit with a light. You can specify a solid color with the ```diffuseColor``` property:
-```javascript
-materialSphere1.diffuseColor = new BABYLON.Color3(1.0, 0.2, 0.7);
-```
-
-Or, you can use a texture:
-```javascript
-materialSphere1.diffuseTexture = new BABYLON.Texture("grass.png", scene);
-```
-
-![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-1.png)
-
-**More About Textures:** Be sure to use the correct path to your image (relative or absolute path). Supported image formats include JPG, PNG, JPEG, BMP, GIF… (every image format supported by your browser).
-
-If you want to translate (offset) your texture on your mesh, you can use the “uOffset” and “vOffset” properties:
-```javascript
-materialSphere1.diffuseTexture.uOffset = 1.5;
-materialSphere1.diffuseTexture.vOffset = 0.5;
-```
-And if you want to repeat/tile an image pattern (e.g. grass texture), you can use the “uScale” and “vScale” properties:
-```javascript
-materialSphere1.diffuseTexture.uScale = 5.0;
-materialSphere1.diffuseTexture.vScale = 5.0;
-```
-
-Remember that (u, v) coordinates refer to the following axis:
-
-![tof](/img/tutorials/crate.jpg)
-
-And if your texture has some alpha, you will need to specify it:
-```javascript
-materialSphere1.diffuseTexture.hasAlpha = true;
-```
-
-In this case, alpha is used for alpha testing. But you may want to use it for alpha blending. To do so, just set ```materialSphere1.useAlphaFromDiffuseTexture```
-
-All of these texture settings apply to the other StandardMaterial properties as well. (.emissiveTexture, .ambientTexture, .specularTexture)  I will remind you.  Now let's continue talking about the other StandardMaterial properties.
+5. Transparency - the level that you can see through the material can be set and for textures images with transparent sections can be used 
+that so that appropriate parts of the material are invisible. This requires an _alpha_ property to be set.
 
 
-* **Emissive**
-
-The emissive is the color produced by the object itself. You can specify a solid color with the ```emissiveColor``` property:
-```javascript
-materialSphere1.emissiveColor = new BABYLON.Color3(1, .2, .7);
-```
-
-Or, you can use a texture:
-```javascript
-materialSphere1.emissiveTexture = new BABYLON.Texture("grass.png", scene);
-```
-See the **More About Textures** section above.  Change occurrences of 'diffuse' to 'emissive', of course.
-
-* **Ambient**
-
-The ambient can be seen as a second level of diffuse. The produced color is multiplied to the diffuse color. This is especially useful if you want to use light maps baked into textures. You can specify a solid color with the ```ambientColor``` property:
-```javascript
-materialSphere1.ambientColor = new BABYLON.Color3(1, 0.2, 0.7);
-```
-Or, you can use a texture:
-```javascript
-materialSphere1.ambientTexture = new BABYLON.Texture("grass.png", scene);
-```
-See the **More About Textures** section above.  Change occurrences of 'diffuse' to 'ambient', of course.
-
-* **Specular**
-
-The specular is the color produced by a light reflecting from a surface. You can specify a solid color with the ```specularColor``` property:
-```javascript
-materialSphere1.specularColor = new BABYLON.Color3(1.0, 0.2, 0.7);
-```
-Or, you can use a texture:
-```javascript
-materialSphere1.specularTexture = new BABYLON.Texture("grass.png", scene);
-```
-When using a texture you can set ```materialSphere1.useGlossinessFromSpecularMapAlpha``` to true to use specular map alpha as glossiness level.
-
-You can also control how specular behaves with alpha. By default, specular does not interact with alpha, but you can set ```materialSphere1.useSpecularOverAlpha``` to true to have alpha inversely proportional to specular value.
-
-Again, see the **More About Textures** section far above.  Change occurrences of 'diffuse' to 'specular', of course.
-
-The specular property has one more setting.  The size/intensity of the specular reflection can be set using the ```specularPower``` property:
-```javascript
-materialSphere1.specularPower = 32;
-```
-
-
-*** Section on OpacityTexture needed here, coming soon. ***
-
-
-There, we have visited the primary color and texture properties of StandardMaterial.  But we are not done yet.  Here are a few more handy properties.
-
-* **Back-Face Culling**
-
-Simply put, “back-face culling” determines whether or not a StandardMaterial is visible from its back side (from behind).  TRUE = NOT visible.  More precisely, this rendering-speed-optimization technique determines if a polygon of a graphical object is visible or not. If set to TRUE or boolean 1, the  Babylon engine won’t render hidden face(s) of the meshes that use this material. It is set TRUE by default, but can be changed to false as wanted. You may want to read more about back-face culling at [the wikipedia page about it](http://en.wikipedia.org/wiki/Back_face_culling).  
-
-In this example, the texture has some alpha, and back-face culling is set to false for the front sphere... in order to see its black inside face:
-
-![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-2.png)
+## Color
+Create a material using
 
 ```javascript
-materialSphere1.backFaceCulling = false;
+var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+```
+Set the material color using one, some or all of _diffuseColor_, _specularColor_, _emissiveColor_ and _ambientColor_. Remember that _ambientColor_ 
+will only apply if the scene ambient color has been set.
+
+```javascript
+var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+
+myMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
+myMaterial.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
+myMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+myMaterial.ambientColor = new BABYLON.Color3(0.23, 0.98, 0.53);
+
+mesh.material = myMaterial;
+```
+### Diffuse Color Example
+To give an idea how material diffuse color reacts to diffuse light color the following [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
+
+| Yellow Material |  Purple Material |
+| Cyan Material | White Material |
+
+react to white, red, green and blue diffuse spot lights. Notice how the viewing angle adjusts the lighting.
+
+[Playground Example Spot Light](/img/spots1.png)
+
+### Ambient Color Example
+In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
+The first sphere has no ambient color, the middle has red ambient color defined on its material and the one on the right 
+has material with green ambient color.
+
+[Playground Example Ambient](/img/ambient1.png)
+
+### Transparent Color Example
+Transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
+```javascript
+var myMaterial.alpha = 0.5;
+```
+[Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
+
+## Texture
+Textures are formed using a saved image.
+
+Create a material using
+
+```javascript
+var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+```
+Set the material texture using one, some or all of _diffuseTexture_, _specularTexture_, _emissiveTexture_ and _ambientTexture_. 
+Notice that _ambientTexture_ is applied without the scene ambient color having been set.
+
+```javascript
+var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+
+myMaterial.diffuseTexture = new BABYLON.Texture("PATH TO IMAGE", scene);
+myMaterial.specularTexture = new BABYLON.Texture("PATH TO IMAGE", scene);
+myMaterial.emissiveTexture = new BABYLON.Texture("PATH TO IMAGE", scene);
+myMaterial.ambientTexture = new BABYLON.Texture("PATH TO IMAGE", scene);
+
+mesh.material = myMaterial;
 ```
 
-* **WireFrame**
+### Texture Example
+In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
+The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 
+has material with red diffuse color an an ambient texture.
 
-You can see your object in wireframe mode... by using:
+[Playground Example Texture](/img/texture1.png)
+
+### Transparent Texture Examples
+As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
+```javascript
+var myMaterial.alpha = 0.5;
+```
+[Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
+
+In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
+which as a transparent background;
+
+[A dog](https://upload.wikimedia.org/wikipedia/commons/8/87/Alaskan_Malamute%2BBlank.png)
+
+In this case we set the _hasAlpha_ property of the **texture** to true.
+```javascript
+var myMaterial.diffuseTexture.hasAlpha = true;
+```
+
+[Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)
+
+For the back faces of the cube to be visible through the transparent areas of the front faces we have to deal with back face culling.
+
+## Back Face Culling
+This is a method for efficiently drawing the 2D screen rendering of the 3D model. Usually there is no need to draw the back face of a cube, or other object, 
+as it will be hidden by the front face. In BabylonJS the default setting is, as you might expect, set to true.
+
+Looking at the images below, when the material propery _backFaceCulling_ is true you can see that the transparent areas around the 
+dog are still transparent, you can see the background through them. However you cannot see the images on the back faces as they have been culled (or removed). 
+When _backFaceCulling_ is false the back faces are not removed during rendering so they can be seen through the transparent areas of the front faces. 
+
+| Back Face Culling True | Back Face Culling False |
+|-----|--------|
+| [BFC True](/img/bfc2.png) | [BFC False](/img/bfc1.png) |
+
+[Playground Example Back Ground Culling False](http://www.babylonjs-playground.com/#YDO1F#19)
+
+## WireFrame
+You can see a mesh in wireframe mode by using:
 ```javascript
 materialSphere1.wireframe = true;
  ```
-
 ![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-3.png)
 
-Again, you can see things from this tutorial... come to life... by browsing to [the Babylon.js Playground scene 4](http://www.babylonjs.com/playground/?4).
 
-More information about materials can be found by reading [**Unleash the StandardMaterial**](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) and also [**Advanced Texturing**](http://doc.babylonjs.com/tutorials/Advanced_Texturing).
+## Further Reading
 
-## Next step
-Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](http://doc.babylonjs.com/tutorials/Cameras).
+### Intermediate
+[More On Textures](/intermediate/Materials.md)
+
+
+
+
