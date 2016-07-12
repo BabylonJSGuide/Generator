@@ -108,7 +108,18 @@
         {
           "title": "Polyhedra",
           "filename": "Polyhedra_Shapes"
+        },
+   {
+     "title": "Materials",
+      "name": "materials",
+      "desc": "Intermediate Materials",
+      "files": [
+        {
+          "title": "More on Textures",
+          "filename": "Materials"
         }
+      ]
+   }
       ]
    }
  ],
