@@ -46,7 +46,8 @@ mesh.material = myMaterial;
 ```
 ### Diffuse Color Example
 To give an idea how material diffuse color reacts to diffuse light color the following [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
-
+|     |     |
+|----|----|
 | Yellow Material |  Purple Material |
 | Cyan Material | White Material |
 
@@ -107,7 +108,7 @@ var myMaterial.alpha = 0.5;
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which as a transparent background;
 
-![A dog](https://upload.wikimedia.org/wikipedia/commons/8/87/Alaskan_Malamute%2BBlank.png)
+![A dog](/img/dog.png)
 
 In this case we set the _hasAlpha_ property of the **texture** to true.
 ```javascript
