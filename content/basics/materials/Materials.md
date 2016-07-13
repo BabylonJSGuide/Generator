@@ -52,14 +52,14 @@ To give an idea how material diffuse color reacts to diffuse light color the fol
 
 react to white, red, green and blue diffuse spot lights. Notice how the viewing angle adjusts the lighting.
 
-[Playground Example Spot Light](/img/spots1.png)
+![ Spot Light](/img/spots1.png)
 
 ### Ambient Color Example
 In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has no ambient color, the middle has red ambient color defined on its material and the one on the right 
 has material with green ambient color.
 
-[Playground Example Ambient](/img/ambient1.png)
+![Ambient](/img/ambient1.png)
 
 ### Transparent Color Example
 Transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
@@ -95,7 +95,7 @@ In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all
 The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 
 has material with red diffuse color an an ambient texture.
 
-[Playground Example Texture](/img/texture1.png)
+![Texture](/img/texture1.png)
 
 ### Transparent Texture Examples
 As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
@@ -107,7 +107,7 @@ var myMaterial.alpha = 0.5;
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which as a transparent background;
 
-[A dog](https://upload.wikimedia.org/wikipedia/commons/8/87/Alaskan_Malamute%2BBlank.png)
+![A dog](https://upload.wikimedia.org/wikipedia/commons/8/87/Alaskan_Malamute%2BBlank.png)
 
 In this case we set the _hasAlpha_ property of the **texture** to true.
 ```javascript
@@ -128,7 +128,7 @@ When _backFaceCulling_ is false the back faces are not removed during rendering 
 
 | Back Face Culling True | Back Face Culling False |
 |-----|--------|
-| [BFC True](/img/bfc2.png) | [BFC False](/img/bfc1.png) |
+| ![BFC True](/img/bfc2.png) | ![BFC False](/img/bfc1.png) |
 
 [Playground Example Back Ground Culling False](http://www.babylonjs-playground.com/#YDO1F#19)
 
