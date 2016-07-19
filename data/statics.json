@@ -121,6 +121,17 @@
           "filename": "Materials"
         }
       ]
+   },
+   {
+     "title": "Environment",
+      "name": "environment",
+      "desc": "Intermediate Environment",
+      "files": [
+        {
+          "title": "Sky",
+          "filename": "Skybox"
+        }
+      ]
    }
  ],
  "advanced": [
@@ -156,6 +167,17 @@
         {
           "title": "Using Decals",
           "filename": "Decals"
+        }
+      ]
+   },
+   {
+     "title": "Materials",
+      "name": "materials",
+      "desc": "Advanced Materials",
+      "files": [
+        {
+          "title": "Reflections and Refractions",
+          "filename": "Reflect"
         }
       ]
    }

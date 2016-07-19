@@ -46,6 +46,7 @@ mesh.material = myMaterial;
 ```
 ### Diffuse Color Example
 To give an idea how material diffuse color reacts to diffuse light color the following [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
+
 |     |     |
 |----|----|
 | Yellow Material |  Purple Material |
@@ -106,7 +107,7 @@ var myMaterial.alpha = 0.5;
 [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
 
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
-which as a transparent background;
+which has a transparent background;
 
 ![A dog](/img/dog.png)
 
@@ -131,7 +132,7 @@ When _backFaceCulling_ is false the back faces are not removed during rendering 
 |-----|--------|
 | ![BFC True](/img/bfc2.png) | ![BFC False](/img/bfc1.png) |
 
-[Playground Example Back Ground Culling False](http://www.babylonjs-playground.com/#YDO1F#19)
+[Playground Example Back Ground Culling True](http://www.babylonjs-playground.com/#YDO1F#19)
 
 ## WireFrame
 You can see a mesh in wireframe mode by using:
@@ -146,6 +147,8 @@ materialSphere1.wireframe = true;
 ### Intermediate
 [More On Textures](/intermediate/Materials.md)
 
-
+### Advanced
+[Reflection and Refraction](/advanced/Reflect.md)
+[Multi Materials](/advanced/Multi_Materials.md)
 
 
