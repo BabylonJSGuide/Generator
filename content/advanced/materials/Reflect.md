@@ -84,3 +84,71 @@ The above image was applied to each of four spheres, one as a diffuse texture an
 [Playground Example of Coordinates Modes](http://www.babylonjs-playground.com/#20OAV9#26)
 
 ### Mirrors
+So far reflections have been of images, using _MirrorTexture_ obects within the scene can be reflected as in a mirror. This is simulated by 
+by setting the _reflectionTexture_ to a _MirrorTexture_ and applying it to a flat surface. 
+
+[Playground Example of Mirrors](http://www.babylonjs-playground.com/#1YAIO7#5)
+
+A real mirror is made of two parts glass and a reflected surface applied to the glass and a mirror simulated within 
+BJS also contains to parts; a flat surface and a reflector. (For a reflective surface such as metal or still water - think metal plus shine and water plus air boundary).
+
+In BJS the flat surface is a ground mesh or a plane mesh and the reflector is a Mathematical Plane which is infinite and 
+lies on top of the flat mesh and reflects where the two overlap.
+
+With a real mirror it is easy to tell if you are standing in front of it or behind it. For a BJS mirror an object is 
+in front of the mirror if the normals of the flat surface point towards the object. 
+
+#### Constructing the Mirror Reflector
+The flat surface should be constructed first from a ground or plane mesh. BJS can then construct the reflector using the position and normal of the flat surface. Since the 
+reflection is on the opposite side of the mirror to the object being reflected the normal for reflection is in the opposite direction to that 
+of the flat surface. 
+
+The next thing to note is that renderings of meshes take place by applying transformations, the worldMatrix, to the original mesh values. It is 
+therefore necessary the get this worldMatrix and apply it to the data from the flat surface in order to obtain the current and actual 3D data in world space.
+
+An example of creating a 'glass' flat surface and obtaining the reflector is
+
+```javascript
+var glass = BABYLON.MeshBuilder.CreatePlane("glass", {width: 5, height: 5}, scene);
+
+//Position and Rotate flat surface
+glass.position = new BABYLON.Vector3(0, 0, 4);
+glass.rotation = new BABYLON.Vector3(Math.PI/4, Math.PI/6, Math.PI/8);
+	
+//Ensure working with new values for flat surface by computing and obtaining its worldMatrix
+glass.computeWorldMatrix(true);
+var glass_worldMatrix = glass.getWorldMatrix();
+	
+//Obtain normals for plane and assign one of them as the normal
+var glass_vertexData = glass.getVerticesData("normal");
+var glassNormal = new BABYLON.Vector3(glass_vertexData[0], glass_vertexData[1], glass_vertexData[2]);	
+//Use worldMatrix to transform normal into its current world value
+glassNormal = new BABYLON.Vector3.TransformNormal(glassNormal, glass_worldMatrix)
+	
+//Create reflector using the position and reflected normal of the flat surface
+var reflector = new BABYLON.Plane.FromPositionAndNormal(glass.position, glassNormal.scale(-1));
+```
+
+#### Constructing the Mirror
+Once the reflector is obtained a _MirrorTexture_ is made that can be applied to the flat surface.
+
+```javascript
+var mirrorMaterial = new BABYLON.StandardMaterial("MirrorMat", scene);
+mirrorMaterial.reflectionTexture = new BABYLON.MirrorTexture("mirror", 512, scene, true);
+mirrorMaterial.reflectionTexture.mirrorPlane = reflector;
+mirrorMaterial.reflectionTexture.renderList = [sphere1, sphere2];
+```
+A _MirrorTexture_ has four parameters: name, size of the rendering buffer (should be a power of 2, the larger the number the better image quality but performance deteriorates); scene and 
+and optional parameter, default value false, that will generate a MIP map when set to true. This increases quality durinng scaling.
+
+The _mirrorPlane_ is set to the constructed reflector. It is possible to directly set the _mirrorPlane_ by directly using a BABYLON.Plane(a, b, c, d) where a, b and c give the plane normal vector (a, b, c) and
+d is a scalar displacement from the _mirrorPlane_ to the origin. However in all but the very simplest of situations it is more straight forward to use the method above.
+
+The _renderList_ is an array of the meshes to be reflected in the mirror.
+
+Finally the mirrorMaterial can be applied to the glass.
+
+```javascript
+glass.material = mirrorMaterial;
+```
+
