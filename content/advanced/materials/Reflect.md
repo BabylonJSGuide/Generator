@@ -101,7 +101,7 @@ in front of the mirror if the normals of the flat surface point towards the obje
 #### Constructing the Mirror Reflector
 The flat surface should be constructed first from a ground or plane mesh. BJS can then construct the reflector using the position and normal of the flat surface. Since the 
 reflection is on the opposite side of the mirror to the object being reflected the normal for reflection is in the opposite direction to that 
-of the flat surface. 
+of the flat surface. For example a mesh of a plane created in BJS has a normal vector (0, 0, -1) at the time of creation and so the reflected normal will be (0, 0, 1).
 
 The next thing to note is that renderings of meshes take place by applying transformations, the worldMatrix, to the original mesh values. It is 
 therefore necessary the get this worldMatrix and apply it to the data from the flat surface in order to obtain the current and actual 3D data in world space.
@@ -151,4 +151,46 @@ Finally the mirrorMaterial can be applied to the glass.
 ```javascript
 glass.material = mirrorMaterial;
 ```
+
+## Refraction
+In this case an object behind glass or under water for example can have its position and size changed by the refraction of light.
+
+[Playground example of Refraction](http://www.babylonjs-playground.com/#22KZUW#15)
+
+Refraction is also achieved by taking a flat surface such as a plane or disc and adding, this this case, a refraction material applied to a flat mesh. The difference is that the object 
+that is to be refracted is placed behind the flat surface, that is the normals of the mesh all point away from the object and the refracted normals are in the same direction. 
+
+The method used above to obtain the _reflectionPlane_ could be used if necessary though in this case the normal of the flat surface is not reversed.
+
+```javascript
+var refractor = new BABYLON.Plane.FromPositionAndNormal(glass.position, glassNormal);
+```
+
+The following example, however, uses a vertical plane for the mesh at the origin and so it is straight forward to obtain the normal (0, 0, -1) and displacement, 0, for the refractor plane. 
+
+```javascript
+    //Create flat surface
+	var surface = BABYLON.MeshBuilder.CreatePlane("surface", {width: 15, height: 15}, scene);
+
+	//Create the refraction material
+	var refractionMaterial = new BABYLON.StandardMaterial("refraction", scene);
+	refractionMaterial.diffuseColor = new BABYLON.Color3(1, 1, 1);
+	refractionMaterial.refractionTexture = new BABYLON.RefractionTexture("refraction", 1024, scene, true);
+	refractionMaterial.refractionTexture.refractionPlane = new BABYLON.Plane(0, 0, -1, 0);
+	refractionMaterial.refractionTexture.renderList = [sphere];
+	refractionMaterial.refractionTexture.depth = 5;
+	refractionMaterial.indexOfRefraction = 0.5;
+	surface.material = refractionMaterial;
+```
+
+Two new parameters are apparent _depth_ a property of the refractionTexture and _indexOfRefraction_ a property of the refraction material/
+
+The two examples below show the effect of changing these.
+
+*Note* in both examples the surfaces are transparent so that the actual position of the sphere can be identified. It is the refracted 
+sphere that changes psoition as the parameters are changed.
+
+[Playground example of changes in refraction depth from 0 to 50](http://www.babylonjs-playground.com/#1YAIO7#20)
+
+[Playground example of changes in index of refraction from 0.1 to 1.5](http://www.babylonjs-playground.com/#1YAIO7#19)
 

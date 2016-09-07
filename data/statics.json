@@ -176,6 +176,10 @@
       "desc": "Advanced Materials",
       "files": [
         {
+          "title": "Applying Materials to Facets",
+          "filename": "Facets"
+        },
+        {
           "title": "Reflections and Refractions",
           "filename": "Reflect"
         }
