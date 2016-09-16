@@ -146,7 +146,7 @@
       "desc": "Advanced Cameras",
       "files": [
         {
-          "title": "Advanved Cameras",
+          "title": "Advanced Cameras",
           "filename": "Cameras"
         }
       ]
@@ -167,6 +167,10 @@
         {
           "title": "Using Decals",
           "filename": "Decals"
+        },
+        {
+          "title": "Creating Custom Meshes",
+          "filename": "Custom.md"
         }
       ]
    },
@@ -182,6 +186,10 @@
         {
           "title": "Reflections and Refractions",
           "filename": "Reflect"
+        },
+        {
+          "title": "Applying Materials to Facets",
+          "filename": "Facets"
         }
       ]
    }

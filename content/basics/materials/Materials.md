@@ -59,7 +59,8 @@ react to white, red, green and blue diffuse spot lights. Notice how the viewing 
 ### Ambient Color Example
 In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has no ambient color, the middle has red ambient color defined on its material and the one on the right 
-has material with green ambient color.
+has material with green ambient color. The scene ambient color, which must be present, is white. When a scene ambient color component is set to 0, for example red, then whatever the value for red in the material 
+ambient color it will have no effect. 
 
 ![Ambient](/img/ambient1.png)
 
@@ -145,10 +146,10 @@ materialSphere1.wireframe = true;
 ## Further Reading
 
 ### Intermediate
-[More On Textures](/intermediate/Materials.md)
+[More On Textures](/intermediate/Materials.html)
 
 ### Advanced
-[Reflection and Refraction](/advanced/Reflect.md)
-[Multi Materials](/advanced/Multi_Materials.md)
+[Reflection and Refraction](/advanced/Reflect.html)
+[Multi Materials](/advanced/Multi_Materials.html)
 
 
