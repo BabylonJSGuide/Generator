@@ -10,7 +10,7 @@ Each and every shape in BabylonJS is built from a mesh of triangles or facets as
 ![Custom Mesh](/img/custom1.jpg)
 
 Every facet is made up of three vertices each of which is assigned data that not only affects the position of the facet but also 
-its colour, texture and how it is lit by the lights in the scene. The complex process of applying a shader to turn this data into a viewable mesh 
+its colour, texture and how it is lit. The complex process of applying a shader to turn this data into a viewable mesh 
 is all carried out by BabylonJS.
 
 ## Positions and Indices
@@ -19,7 +19,7 @@ Creating a mesh with two facets one with vertices at (-5, 2, -3), (-7, -2, -3), 
 requires each vertex to have a unique index. Indices should start at 0 and increase consecutively.
 
 index|position
------|-------------
+-----|----
 0| (-5, 2, -3)
 1| (-7, -2, -3)
 2| (-3, -2, -3)
@@ -58,7 +58,7 @@ vertexData.applyToMesh(customMesh);
 
 Usually a normal to a plane is a vector that is at right angles to a plane and for the this example this is true. 
 BabylonJS will calculate normals for a facet and for free standing facets not sharing any vertices with another facet 
-the normals will be mathematical normals. For more on how normals affect lighting see {{{link needed}}}.
+the normals will be mathematical normals. For more on how normals affect lighting see [Normals](/advanced/Normals.html).
 
 ### Calculating
 
@@ -161,7 +161,7 @@ Comment line 41 out in the following to see back face culling happening.
 ## Color
 
 The simplest way to assign a color to the custom mesh is by applying a standard material to the mesh and let BabylonJS do all the work. However 
-color can be set for a facet within the vertex data. For information on how the arrangement of facets used in constructing a mesh can affect how colors are displayed see [Applying Materials to Facets](/advanced/materials/Facets.html).
+color can be set for a facet within the vertex data. For information on how the arrangement of facets used in constructing a mesh can affect how colors are displayed see [Applying Materials to Facets](/advanced/Facets.html).
 
 Colors for each vertex are placed in an array as groups of four in the order red, green, blue and alpha for transparency. For the facet 0, 1, 2 to be colored red and the facet 3, 4, 5 to be colored green each vertex 
 on each facet is given the same color.
@@ -206,11 +206,11 @@ Since a material is no longer being used backFaceCulling cannot be set and so th
 whatever color is applied since all light is still being absorbed by this facet. When the scene starts the camera is very nearly full face on 
 to the facet and pointing in the dirrection the light is travelling. With the camera in this position most of the white light is reflected back into the camera as a highlight
 and the facet is seen as almost white. As the camera is rotated around the facet will change from appearing as white to red as the highlight effect disipates. For a more 
-controlled [lighting effects use a material](/basics/materials/Materials.html) as well as, or instead of, setting vertex colors.
+controlled lighting effects use a [material](/basics/Materials.html) as well as, or instead of, setting vertex colors.
 
 ## Texture
 
-The simplest method is to just use [materials](/basics/materials/Materials.html) and let BabylonJS apply the given image as a texture. 
+The simplest method is to just use [materials](/basics/Materials.html) and let BabylonJS apply the given image as a texture. 
 However should you wish to have more control on how a texture is applied to a facet then you need to create and set the uv array.
 
 Think of any image, to be applied as a texture, as having a pair of axes set at the bottom and left hand side of the image, the u axis and the v axis respectively. 
@@ -257,7 +257,7 @@ results in
 
 ![Result on Facet](/img/uv3.jpg)
 
-Note that the inage is skewed since the shape of the triangular facet and that on the image do not match.
+Note that the image is skewed since the shape of the triangular facet and that on the image do not match.
 
 Adding in these lines at the appropiate points
 ```javascript
@@ -276,5 +276,5 @@ In the playground below clicking on next will cycle you through a variety of val
 ### Notes on Playground
 The camera has been disabled for this playground. The uv values are shown and the relative index are shown on the texture image. 
 One day this might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh 
-the [arrangement of facets](/advanced/materials/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
+the [arrangement of facets](/advanced/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
 

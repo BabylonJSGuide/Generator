@@ -10,12 +10,8 @@
      "filename":"Introducing_Babylonjs"
      },
      {
-     "title": "Introducing the Playground",
-     "filename":"Introducing_the_Playground"
-     },
-     {
-     "title": "Using the Playground",
-     "filename":"Using_the_Playground"
+     "title": "The Playground",
+     "filename":"The_Playground"
      }
    ]
    }
@@ -45,6 +41,10 @@
         {
           "title": "Standard Shapes",
           "filename": "Shapes"
+        },
+        {
+          "title": "Position and Rotation",
+          "filename": "Position"
         }
       ]
    },
@@ -108,6 +108,10 @@
         {
           "title": "Polyhedra",
           "filename": "Polyhedra_Shapes"
+        },
+        {
+          "title": "Translate and Rotate",
+          "filename": "Translate"
         }
       ]
    },
@@ -130,6 +134,17 @@
         {
           "title": "Sky",
           "filename": "Skybox"
+        }
+      ]
+   },
+   {
+     "title": "Gamelets",
+      "name": "gamelets",
+      "desc": "Intermediate Games",
+      "files": [
+        {
+          "title": "Simple Car Following Path",
+          "filename": "Car"
         }
       ]
    }
@@ -165,12 +180,24 @@
           "filename": "Maths_Make_Ribbons"
         },
         {
+          "title": "Translate and Rotate Details",
+          "filename": "Rotate"
+        },
+        {
           "title": "Using Decals",
           "filename": "Decals"
         },
         {
           "title": "Creating Custom Meshes",
           "filename": "Custom"
+        },
+        {
+          "title": "Facet Normals",
+          "filename": "Normals"
+        },
+        {
+          "title": "Updating Vertices",
+          "filename": "Updating_Vertices"
         }
       ]
    },
@@ -190,6 +217,17 @@
         {
           "title": "Applying Materials to Facets",
           "filename": "Facets"
+        }
+      ]
+   },
+   {
+     "title": "Gamelets",
+      "name": "gamelets",
+      "desc": "Advanced Games",
+      "files": [
+        {
+          "title": "Making a Simple Driven Car",
+          "filename": "Car"
         }
       ]
    }

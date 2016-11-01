@@ -109,7 +109,7 @@ light.range = 100;
 when a light is created all current meshes will be lit by it. There are two ways to exclude some meshes from being lit. 
 A mesh can be added to the _excludedMeshes_ array or add the ones not to be excluded to the _includedOnlyMeshes_ array. The number of meshes to be excluded 
 can be one factor in deciding which method to use. In the following example two meshes are to be excluded from _light0_ and twenty three from 
-_light1_
+_light1_. Commenting out lines 26 and 27 in turn will show the individual effect.
 
 [Playground Example Excluding Lights](http://www.babylonjs-playground.com/#20OAV9#8)
 

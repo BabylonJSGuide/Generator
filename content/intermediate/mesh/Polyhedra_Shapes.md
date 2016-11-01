@@ -1,12 +1,12 @@
 ---
 PG_TITLE: Polyhedra Shapes
 ---
-## Polyhedra Shapes
+# Polyhedra Shapes
 
 There are fifteen polyhedra that can be created simply by setting its type number from 0 to 14, and one, the icosphere that is created by name to which more variations can be applied. 
 However there are plenty more to choose from, just follow the instructions under Custom Polyhedra.
 
-### Polyhedron
+## Polyhedron
 Example :
 ```javascript
 var octahedron = BABYLON.MeshBuilder.CreatePolyhedron("oct", {type: 1, size: 3}, scene);
@@ -30,7 +30,7 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors taking into account the right number of faces of your polyhedron, instead of only 6 for a box. 
 
 
-#### Provided Polyhedron Types :
+### Provided Polyhedron Types :
 
 type|name|side number
 ----|----|-----------
@@ -50,7 +50,7 @@ type|name|side number
 13|Elongated Pentagonal Dipyramid (J16)|15
 14|Elongated Pentagonal Cupola (J20)|22
 
-### Custom Polyhedra
+## Custom Polyhedra
 
 If you need to use a custom polyhedron visit http://www.babylonjs-playground.com/#21QRSK#1) : minimize the code editor with the button "EDITOR-" and note the polyhedron names under the mouse pointer. 
 The data for each name can be found in the polyhedra.js file here https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
@@ -63,7 +63,7 @@ var heptagonalPrism = { "name":"Heptagonal Prism", "category":["Prism"], "vertex
 var mesh = BABYLON.MeshBuilder.CreatePolyhdron("h", {custom: heptagonalPrism}, scene);
 ```
 
-### IcoSphere
+## IcoSphere
 This a sphere based upon an icosahedron with 20 triangular faces which can be subdivided.
 ```javascript
 var icosphere = BABYLON.MeshBuilder.CreateIcoSphere("ico", {radius: 5, radiusY: 8, subdivisions: 6}, scene);
@@ -85,6 +85,11 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 An example of an IcoSphere: http://www.babylonjs-playground.com/#24DUYD#1
 
 and one with animation: http://www.babylonjs-playground.com/#E3TVT#1
+
+## Updatable
+
+Where a polyhedral shape has an updatable parameter in its options it means that it is possible to alter the data associated 
+with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/advanced/Updating_Vertices.html)
 
 ## Further Reading
 
