@@ -91,13 +91,13 @@ and one with animation: http://www.babylonjs-playground.com/#E3TVT#1
 Where a polyhedral shape has an updatable parameter in its options it means that it is possible to alter the data associated 
 with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/advanced/Updating_Vertices.html)
 
-## Further Reading
+# Further Reading
 
-### Intermediate   
+## Intermediate   
 [Additional Shapes](/intermediate/Shapes.html)  
 [Parametric Shapes](/intermediate/Parametric_Shapes.html)
 
-### Advanced   
+## Advanced   
 [Ribbons In Detail](/advanced/Ribbons_In_Detail.html)
 [Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)
 [Decals](/advanced/Decals.html) 

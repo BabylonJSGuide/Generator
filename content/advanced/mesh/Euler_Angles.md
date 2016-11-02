@@ -44,3 +44,6 @@ box1.rotation to obtain the same orientation as the first box.
 
 [Playground Example Random Orientation to Euler Angles for mesh.rotation](http://www.babylonjs-playground.com/#1ST43U#7)
 
+# Further Reading
+
+[Applying Rotation Conventions](/advanced/Applying_Rotations.html)

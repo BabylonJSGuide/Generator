@@ -97,16 +97,13 @@ This consistency of order z, x, y can be further checked out in the following pl
 ## Simple Animation using Position and Rotation
 
 The aim is to produce an animation of a disc rotating along a straight horizontal path. When a disc of radius r 
-rotates through an angle theta the disc travels a distance of r /* theta. For the animation this means a series of positions 
-a distance r /* theta apart. These positions are used as the points with which to create the line. 
+rotates through an angle theta the disc travels a distance of r \* theta. For the animation this means a series of positions 
+a distance r \* theta apart. These positions are used as the points with which to create the line. 
 
 [Playground Example Rotation Along Straight Horizontal Path](http://www.babylonjs-playground.com/#92EYG#10)
 
-##Further Reading
+# Further Reading
 
-[Rotate about Axis](/basic/Axis_Rotation.html)
-
-[Rotate a Mesh](/intermediate/Translate.html)
-
-[Applying Rotations Convention BJS](/advanced/Applying_Rotations.html)
-
+[Rotate about Axis](/basic/Axis_Rotation.html)  
+[Rotate a Mesh](/intermediate/Translate.html)  
+[Applying Rotations Convention BJS](/advanced/Applying_Rotations.html)  

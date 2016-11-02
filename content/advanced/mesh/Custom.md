@@ -278,3 +278,9 @@ The camera has been disabled for this playground. The uv values are shown and th
 One day this might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh 
 the [arrangement of facets](/advanced/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
 
+# Further Reading
+
+[Updating Vertices](/advanced/Updating_Vertices.html)  
+[Normals in BJS](/advanced/Normals.html)
+
+

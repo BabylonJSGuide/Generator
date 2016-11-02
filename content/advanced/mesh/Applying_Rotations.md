@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Applying Rotations Convention BJS
+PG_TITLE: Applying Rotation Conventions BJS
 ---
 
-# Applying Rotations Convention BJS
+# Applying Rotation Conventions BJS
 
 There are several methods of achieving rotations within BabylonJS including the use of, Euler Angles, Quaternions and Yaw, Pitch and Roll. All of which 
 have in the context of BabylonJS have a particular convention when used.
@@ -99,6 +99,6 @@ which will produce this orientation whatever the orientation of the mesh prior t
 ### Other Conventions
 From BabylonJS version 2.5 other conventions can be converted to be used with mesh.rotation. Check out the further reading below.
 
-## Further Reading
+# Further Reading
 
 [Euler Angles and Quaternions](/advanced/Euler_Angles.html)

@@ -143,12 +143,12 @@ materialSphere1.wireframe = true;
 ![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-3.png)
 
 
-## Further Reading
+# Further Reading
 
-### Intermediate
+## Intermediate
 [More On Textures](/intermediate/Materials.html)
 
-### Advanced
+## Advanced
 [Reflection and Refraction](/advanced/Reflect.html)
 [Multi Materials](/advanced/Multi_Materials.html)
 

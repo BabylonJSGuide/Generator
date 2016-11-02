@@ -5,7 +5,7 @@ PG_TITLE: Rotation Around an Axis
 # Rotation Around an Axis
 
  Rotation properties and methods of a mesh are set to be about an axis through the _local origin_ of a mesh. In this case 
- all that is necessary to define an axis is a vector.
+ all that is necessary is to define an axis is a vector.
 
 ## Rotate
 
@@ -15,9 +15,10 @@ world (BABYLON.Space.WORLD)
 ```javascript
 mesh.rotate(axis, angle, space);
 ```
-Using rotate is cumulative, that is the rotation angle is added to the current rotation angle.
+Using rotate is cumulative, that is the rotation angle is added to the current rotation angle, so in an animation the same angle is used 
+in each frame.
 
-Read more about [rotate](/intermediate/translate.html)
+Read more about [rotate](/intermediate/Translate.html)
 
 
 ## Rotation Quaternion
@@ -25,12 +26,27 @@ Read more about [rotate](/intermediate/translate.html)
 Just as you set mesh.rotation to a 3 dimensional vector you set mesh.rotationQuaternion to a quaternion, a 4 dimensional vector (x, y, z, w) 
 where x, y, z defines a world axis and w the angle of rotation about the axis.
 
-You set the rotationQuaternion property given an axis and an angle as follows
+You set the rotationQuaternion property given an axis and an angle by creating a quaternion as follows
 
 ```javascript
-mesh.rotationQuaternion = BABYLON.RotationAxis(axis, angle);
+mesh.rotationQuaternion = new BABYLON.Quaternion.RotationAxis(axis, angle);
 ```
-As for rotation a further use of rotationQuaternion re-sets the rotation to the new angle.
+As for rotation a further use of rotationQuaternion re-sets the rotation to the new angle, so in an animation the angle of rotation 
+is increased each frame.
+
+[Playground Example using a Quaternion](http://www.babylonjs-playground.com/#1JLGFP#11)
+
+
+# Further Reading
+
+## Intermediate
+[rotate](/intermediate/Translate.html)  
+
+## Advanced
+[Rotation About a Remote Axis](/advanced/Pivot.html)  
+[Euler Angles and Quaternions](/advanced/Euler_Angles.html)  
+[Euler Angle Conventions in BJS](/advanced/Applying_Rotations.html)  
+
 
 
 

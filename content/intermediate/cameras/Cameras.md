@@ -85,10 +85,10 @@ The _eyeSpace_ parameter sets the amount of shift between the left eye view and 
 
 You can learn all about anaglyphs by visiting a [Wikipedia page that explains it thoroughly](http://en.wikipedia.org/wiki/Anaglyph_3D). 
 
-## Further Reading
+# Further Reading
 
-### Intermediate   
+## Intermediate   
 [Customizing Camera Inputs](/intermediate/Customizing_Inputs.html)
 
-### Advanced   
+## Advanced   
 [Orientation and 3D Cameras](/advanced/Cameras.html) 

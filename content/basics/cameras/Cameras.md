@@ -90,13 +90,13 @@ Panning with an ArcRotateCamera is also possible by using CTRL at the same time 
 
 In both the above playgrounds the starting positions and targets have been set to be the same and the different way they handle controls can be seen.
 
-## Further Reading
+# Further Reading
 
-### Intermediate   
+## Intermediate   
 [Additional Cameras](/intermediate/Cameras.html)  
 [Customizing Camera Inputs](/intermediate/Customizing_Inputs.html)
 
-### Advanced   
+## Advanced   
 [Orientation and 3D Cameras](/advanced/Cameras.html)  
 
 

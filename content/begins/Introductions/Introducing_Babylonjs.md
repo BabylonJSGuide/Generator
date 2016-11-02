@@ -8,10 +8,10 @@ BabylonJS is a great way to code a 3D environment on the web using the HTML5 can
 
 ## The Playground
 
-This is the quickest and easiest way to make your own scene. Creating a 3D scene is easy, simple add a camera, lights and meshes (shapes) and you are away. 
+This is the quickest and easiest way to make your own scene. Creating a 3D scene is easy, simply add a camera, lights and meshes (shapes) and you are away. 
 
 The [Playground](http://babylonjs-playground.com) is web site which has everything you need to create 
-your own scene or edit and existing one. More about the Playground [here](/begins/The_Playground.html).
+your own scene or edit an existing one. More about the Playground [here](/begins/The_Playground.html).
 
 A template for creating a scene within the playground is;
 
@@ -81,7 +81,7 @@ Finally, after these, add code to call the scene, to enable the engine to contin
 	</style>
 	
 	<script src="www.babylonjs.com/babylon.js"></script>
-        <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+	<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
 	
 
 	
@@ -143,24 +143,24 @@ Finally, after these, add code to call the scene, to enable the engine to contin
 
 ## Notes
 
-1. The examples above use the newer MeshBuilder method for creating shapes where variables for the shape are set within the options object parameter and has some advantages  
+1. The examples above use the newer MeshBuilder method for creating shapes where variables for the shape are set within the options object parameter and has some advantages 
 over the older form of BABYLON.Mesh.Create.... which uses a parameter list for the shape variables. The majority of Playgrounds use the older method as many were created 
 before MeshBuilder existed. 
 
-2. The use of PEP for pointer events is more recent advice, older advice was to use a system called hand.js. Both work though hand.js in no longer 
+2. The use of PEP for pointer events is more recent advice, older advice was to use a system called hand.js. Both work though hand.js is no longer 
 maintained. You will find references to hand.js in the official documentation. Particularly in the [Babylon.js Primer](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) which gives a more detailed overview 
 of coding with BabylonJS. 
 
-## Further Reading
-[BabylonJS Official Documentation](http://doc.babylonjs.com)
-[BabylonJS Forum](http://www.html5gamedevs.com/forum/16-babylonjs)
+# Further Reading
+[BabylonJS Official Documentation](http://doc.babylonjs.com)  
+[BabylonJS Forum](http://www.html5gamedevs.com/forum/16-babylonjs)  
 [PEP and hand.js](http://www.html5gamedevs.com/topic/22474-how-does-babylonjs-get-pointer-events-working/#comment-127993)
 
-## Useful Links
+# Useful Links
 
-[BabylonJS Main Website](http://www.babylonjs.com/)
-[BabylonJS Playground](http://babylonjs-playground.com)
-[PEP](https://github.com/jquery/PEP)
+[BabylonJS Main Website](http://www.babylonjs.com/)  
+[BabylonJS Playground](http://babylonjs-playground.com)  
+[PEP](https://github.com/jquery/PEP)  
 [hand.js](https://github.com/Deltakosh/handjs)
 
 

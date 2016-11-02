@@ -106,3 +106,9 @@ shows the individual faces making up the sphere.
 
 [Playground Example Comparing Shading of Spheres](http://www.babylonjs-playground.com/#1H7L5C#38)
 
+# Further Reading
+
+[Custom Meshes](/advanced/Custom.html)  
+[Updating Vertice](/advanced/Updating_Vertices.html)
+
+

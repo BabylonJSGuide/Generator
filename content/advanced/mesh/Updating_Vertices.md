@@ -49,3 +49,7 @@ mesh.updateVerticesData(BABYLON.VertexBuffer.UVKind, uvs);
 [Playground Example Playing Around with Positions](http://www.babylonjs-playground.com/#VE6GP#2)
 
 
+# Further Reading
+
+[NCustom Meshes](/advanced/Custom.html)
+[Normals in BJS](/advanced/Normals.html)

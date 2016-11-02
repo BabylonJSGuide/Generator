@@ -24,10 +24,10 @@ angle|_(number)_ the angle to rotate the decal|0
 
 [A Playground Example of Decals](http://www.babylonjs-playground.com/#1BAPRM#73) click on the cat.
 
-## Further Reading
+# Further Reading
 
-### Basics
+## Basics
 [Standard Shapes](/basics/Shapes.html) 
 
-### Intermediate   
+## Intermediate   
 [Additional Shapes](/intermediate/Shapes.html)  

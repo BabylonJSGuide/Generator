@@ -117,14 +117,14 @@ subdivisions|_(number)_ number of square subdivisions|1
 Where a standard shape has an updatable parameter in its options it means that it is possible to alter the data associated 
 with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/advanced/Updating_Vertices.html)
 
-## Further Reading
+# Further Reading
 
-###Intermediate   
+## Intermediate   
 [Additional Shapes](/intermediate/Shapes.html)  
-[Parametric Shapes](/intermediate/Parametric_Shapes.html)
-[Polyhedra Shapes](/intermediate/Polyhedra_Shapes.html)
+[Parametric Shapes](/intermediate/Parametric_Shapes.html)  
+[Polyhedra Shapes](/intermediate/Polyhedra_Shapes.html)  
 
-### Advanced   
-[Ribbons In Detail](/advanced/Ribbons_In_Detail.html)
-[Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)
-[Decals](/advanced/Decals.html) 
+## Advanced   
+[Ribbons In Detail](/advanced/Ribbons_In_Detail.html)  
+[Maths Makes Ribbons](/advanced/Maths_Make_Ribbons.html)  
+[Decals](/advanced/Decals.html)  

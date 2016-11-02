@@ -47,8 +47,8 @@ skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("PATH TO IMAGES FOLDE
 1. skybox
 2. TropicalSunnyDay
 
-## Further Reading
+# Further Reading
 
-### Advanced
+## Advanced
 
 [Reflections and Refractions](/advanced/Reflect)
