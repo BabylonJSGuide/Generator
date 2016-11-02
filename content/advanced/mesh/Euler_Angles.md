@@ -31,7 +31,7 @@ var abcQuaternion = BABYLON.Quaternion.RotationAlphaBetaGamma(alpha, beta, gamma
 
 ## Euler Angles from Quaternions
 
-The Euler angles that can be used in mesh.rotation can be found from any quaternion this method
+The Euler angles that can be used in mesh.rotation can be found from any quaternion the following method
 
 ```javascript
 var euler = quaternion.toEulerAngles();

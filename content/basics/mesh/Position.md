@@ -104,7 +104,9 @@ a distance r /* theta apart. These positions are used as the points with which t
 
 ##Further Reading
 
-[Rotate a Mesh](/intermediate/Translate.html);
+[Rotate about Axis](/basic/Axis_Rotation.html)
+
+[Rotate a Mesh](/intermediate/Translate.html)
 
 [Applying Rotations Convention BJS](/advanced/Applying_Rotations.html)
 

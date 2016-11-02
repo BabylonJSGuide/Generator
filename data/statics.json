@@ -45,6 +45,10 @@
         {
           "title": "Position and Rotation",
           "filename": "Position"
+        },
+        {
+          "title": "Rotation Around an Axis",
+          "filename": "Axis"
         }
       ]
    },
@@ -184,8 +188,16 @@
           "filename": "Rotate"
         },
         {
-          "title": "Using Decals",
-          "filename": "Decals"
+          "title": "Rotation Around an Axis Through a Pivot",
+          "filename": "Pivot"
+        },
+        {
+          "title": "Euler Angles and Quaternions",
+          "filename": "Euler_Angles"
+        },
+        {
+          "title": "Applying Rotations Convention BJS",
+          "filename": "Applying_Rotations"
         },
         {
           "title": "Creating Custom Meshes",
@@ -198,6 +210,10 @@
         {
           "title": "Updating Vertices",
           "filename": "Updating_Vertices"
+        },
+        {
+          "title": "Using Decals",
+          "filename": "Decals"
         }
       ]
    },
