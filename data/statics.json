@@ -140,17 +140,6 @@
           "filename": "Skybox"
         }
       ]
-   },
-   {
-     "title": "Gamelets",
-      "name": "gamelets",
-      "desc": "Intermediate Games",
-      "files": [
-        {
-          "title": "Simple Car Following Path",
-          "filename": "Car"
-        }
-      ]
    }
  ],
  "advanced": [
@@ -235,15 +224,70 @@
           "filename": "Facets"
         }
       ]
+   }
+  ],
+ "gamelets": [
+   {
+      "title": "All",
+      "name": "All",
+      "desc": "All the Gamelets."
    },
    {
-     "title": "Gamelets",
-      "name": "gamelets",
-      "desc": "Advanced Games",
+     "title": "Introduction",
+      "name": "introduction",
+      "desc": "Introduction to Gamelets",
+      "files": [
+        {
+          "title": "Introduction to Gamelets",
+          "filename": "Introduction"
+        }
+      ]
+   },
+   {
+     "title": "Intermediate",
+      "name": "intermediate",
+      "desc": "Intermediate Gamelets",
+      "files": [
+        {
+          "title": "Simple Car Following Path",
+          "filename": "Car"
+        }
+      ]
+   },
+   {
+     "title": "Advanced",
+      "name": "advanced",
+      "desc": "Advanced Gamelets",
       "files": [
         {
           "title": "Making a Simple Driven Car",
           "filename": "Car"
+        }
+      ]
+   }
+  ],
+ "snippets": [
+   {
+      "title": "All",
+      "name": "All",
+      "desc": "All the Snippets."
+   },
+   {
+     "title": "Snippets",
+      "name": "snippet",
+      "desc": "Code Snippets",
+      "files": [
+        {
+          "title": "Introduction to Snippets",
+          "filename": "Introduction"
+        },
+        {
+          "title": "Minimise Vertices",
+          "filename": "Minimise_Vertices"
+        },
+        {
+          "title": "Increasing Facets",
+          "filename": "Increasing_Facets"
         }
       ]
    }

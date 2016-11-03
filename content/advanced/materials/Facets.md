@@ -1,5 +1,5 @@
 ---
-PG_TITLE: 3004. Applying Materials to Facets.md
+PG_TITLE: Applying Materials to Facets
 ---
 
 # Materials and Vertices

@@ -28,6 +28,14 @@
                 $('<a>', {
                     href: '/advanced',
                     html: '<i class="fa fa-book"></i>Advanced.html'
+                }),
+                $('<a>', {
+                    href: '/gamelets',
+                    html: '<i class="fa fa-book"></i>Gamelets.html'
+                }),
+                $('<a>', {
+                    href: '/snippets',
+                    html: '<i class="fa fa-book"></i>Snippets.html'
                 })
             ];
 

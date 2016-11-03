@@ -49,7 +49,7 @@ When animating with translate and rotate use scene.register**After**Render rathe
 # Further Reading
 
 ## Intermediate
-[A Simple Car Following a Path](/intermediate/gamelets/Car.html)
+[A Simple Car Following a Path](/gamelets/Car.html)
 
 ## Advanced
 [Rotate About a Pivot Other than the Local Origin](/advanced/Pivot.html)

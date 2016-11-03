@@ -42,7 +42,9 @@ module.exports = function(done){
         "begins",
         "basics",
         "intermediate",
-        "advanced"
+        "advanced",
+        "gamelets",
+        "snippets"
     ];
 
     var globalObj = {};

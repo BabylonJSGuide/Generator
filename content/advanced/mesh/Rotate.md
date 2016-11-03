@@ -161,5 +161,5 @@ This is because the animation code is registered after the frame rendering the p
 
 # Further Reading
 
-## Intermediate
-[Making A Simple Driven Car using Translate and Rotate](/advanced/gamelets/Car.html)
+## Advanced
+[Making A Simple Driven Car using Translate and Rotate](/gamelets/Car.html)
