@@ -77,12 +77,16 @@ var ar; //matrix for actual rotation required
 ```
 [Playground Example - Rotating Mesh No Parenting](http://www.babylonjs-playground.com/#1JLGFP#8)
 
-Note: as can be seen in the Playgrounds below this method allows the pivot to be moved without re-positioning the pilot.
+**Note:** as can be seen in the Playgrounds below, **provided the axis is not changed**, the pivot position can be changed without re-positioning the pilot. 
+For a general way of placing a pivot for a mesh to rotate around any axis see [Centres of Rotation and Enlargement](/snippets/pivot.md).
 
 [Playground Example - Rotating Mesh Moving Pivot along Axis](http://www.babylonjs-playground.com/#1JLGFP#9)
 
 [Playground Example - Rotating Mesh Moving Pivot](http://www.babylonjs-playground.com/#1JLGFP#10)
 
+# Further Reading
 
+## Snippets
+[Centres of Rotation and Enlargement](/snippets/pivot.md)
 
 
