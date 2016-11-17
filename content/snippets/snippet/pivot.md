@@ -11,8 +11,8 @@ rotate or enlarge relative to that centre.
 
 ```javascript
 BABYLON.Mesh.prototype.rotateAroundPivot = function(pivotPoint, axis, angle) {
-	if(!this._rq) {
-		this._rq = BABYLON.Quaternion.Identity();
+	if(!this._rotationQuaternion) {
+		this._rq = BABYLON.Quaternion.RotationYawPitchRoll(this.rotation.y, this.rotation.x, this.rotation.z);
 	}		
 	var _p = new BABYLON.Quaternion(this.position.x - pivotPoint.x, this.position.y - pivotPoint.y, this.position.z - pivotPoint.z, 0);
 	axis.normalize();
@@ -49,4 +49,4 @@ The parameters are the position of the pivot (centre of enlargemen) as a Vector3
 
 ## Playground
 
-[Playground Example](http://www.babylonjs-playground.com/#1MKHR9)
+[Playground Example](http://www.babylonjs-playground.com/#1MKHR9#2)

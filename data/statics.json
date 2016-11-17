@@ -23,6 +23,21 @@
       "desc": "All the Basic Tutorials."
    },
    {
+     "title": "Directories",
+      "name": "directory",
+      "desc": "Pages that List Things",
+      "files": [
+        {
+          "title": "Constants",
+          "filename": "Constants"
+        },
+        {
+          "title": "Textures Available to Playground",
+          "filename": "Playground_Textures"
+        }
+      ]
+   },
+   {
      "title": "Cameras",
       "name": "cameras",
       "desc": "Basic Cameras",

@@ -36,3 +36,11 @@ Specifies world or local axis when using rotate or tranlate for example.
 
 BABYLON.Space.LOCAL
 BABYLON.Space.WORLD
+
+Specifies the x, y or z axis as a unit vector
+
+BABYLON.Axis.X
+BABYLON.Axis.Y
+BABYLON.Axis.Z
+
+
