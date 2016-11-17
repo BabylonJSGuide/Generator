@@ -109,6 +109,6 @@ shows the individual faces making up the sphere.
 # Further Reading
 
 [Custom Meshes](/advanced/Custom.html)  
-[Updating Vertice](/advanced/Updating_Vertices.html)
+[Updating Vertices](/advanced/Updating_Vertices.html)
 
 
