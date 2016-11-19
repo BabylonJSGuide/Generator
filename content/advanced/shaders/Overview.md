@@ -121,3 +121,17 @@ void main(void) {
 ```
 
 ![Shader Code](/img/shade3.jpg)
+
+## Putting Shader Code in BabylonJS
+Here are four ways of putting shader code into your scene:
+
+1. Use [BabylonJS Create Your Own Shader (CYOS)](http://www.babylonjs.com/cyos/) and download a zip file; 
+2. Write, save and import a Vertex and Fragment Shader file of type .fx into your code; 
+3. Use the shaderBuilder extension of BabylonJS.
+
+More details on this can be found below.
+
+# Further Reading
+
+[Putting Shader Code in BabylonJS](/shaders/writing.html)
+

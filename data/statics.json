@@ -239,6 +239,21 @@
           "filename": "Facets"
         }
       ]
+   },
+   {
+     "title": "Shaders",
+      "name": "shaders",
+      "desc": "Using Shaders",
+      "files": [
+        {
+          "title": "Overview",
+          "filename": "Overview"
+        },
+        {
+          "title": "Putting Shader Code in BJS",
+          "filename": "Putting"
+        }
+      ]
    }
   ],
  "gamelets": [
