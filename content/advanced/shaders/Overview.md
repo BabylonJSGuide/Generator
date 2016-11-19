@@ -43,7 +43,7 @@ the process becomes
 * Shader GPU Code is processed by GPU to produce the screen image.
 
 ## Types of Shader
-Shaders are written in Graphics Library Shader Language (GLSL) and come in to parts.
+Shaders are written in Graphics Library Shader Language (GLSL) and come in two parts.
 
 1. Vertex Shader - this takes the data for each vetex and determines where on the screen the pixel for it will be displayed and its color.
 
@@ -81,10 +81,10 @@ float r = 2;
 
 Some examples of types are
 
-vec2 ------ a two dimensional vector of floating-point numbers 
-vec3 ------ a three dimensional vector of floating-point numbers 
-mat4 ------ a matrix with 4 columns and 4 rows floating-point numbers
-sampler2D - a 2D texture image
+vec2 ------ a two dimensional vector of floating-point numbers  
+vec3 ------ a three dimensional vector of floating-point numbers   
+mat4 ------ a matrix with 4 columns and 4 rows floating-point numbers  
+sampler2D - a 2D texture image  
 
 Since vertex positions need to be as accurate as possible all floating-point numbers should be set as having high precision. 
 This is done at the start of the code for each shader using - 
@@ -126,12 +126,13 @@ void main(void) {
 Here are four ways of putting shader code into your scene:
 
 1. Use [BabylonJS Create Your Own Shader (CYOS)](http://www.babylonjs.com/cyos/) and download a zip file; 
-2. Write, save and import a Vertex and Fragment Shader file of type .fx into your code; 
-3. Use the shaderBuilder extension of BabylonJS.
+2. Write the Vertex and Fragment Shader Code into &lt;script&gt; tags
+3. Write, save and import a Vertex and Fragment Shader file of type .fx into your code; 
+4. Use the shaderBuilder extension of BabylonJS.
 
 More details on this can be found below.
 
 # Further Reading
 
-[Putting Shader Code in BabylonJS](/shaders/writing.html)
+[Putting Shader Code in BabylonJS](/advanced/Putting.html)
 
