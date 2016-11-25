@@ -252,6 +252,10 @@
         {
           "title": "Putting Shader Code in BJS",
           "filename": "Putting"
+        },
+        {
+          "title": "Shader Material",
+          "filename": "Shader_Material"
         }
       ]
    }

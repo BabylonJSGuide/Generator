@@ -8,9 +8,9 @@ PG_TITLE: BabylonJS Constants
 
 Used if required when creating a mesh to set side orientation.
 
-BABYLON.Mesh.FRONTSIDE,
-BABYLON.Mesh.BACKSIDE,
-BABYLON.Mesh.DOUBLESIDE,
+BABYLON.Mesh.FRONTSIDE,  
+BABYLON.Mesh.BACKSIDE,  
+BABYLON.Mesh.DOUBLESIDE,  
 BABYLON.Mesh.DEFAULT which is the default value and equals FRONTSIDE currently.
 
 ## VertexBuffer Kind

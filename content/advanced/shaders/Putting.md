@@ -10,6 +10,8 @@ Here are four ways of putting shader code into your scene:
 3. Write, save and import a Vertex and Fragment Shader file of type .fx into your code; 
 4. Use the shaderBuilder extension of BabylonJS.
 
+Methods 1, 2 and 3 use [BABYLON.ShaderMaterial](/advanced/Shader_Material.html) to pass data to the shaders.
+
 ## BabylonJS CYOS Download
 
 This site allows you to write code for a Vertex Shader and a Fragment Shader and see the results on a variety of meshes. 
@@ -81,8 +83,11 @@ mesh.material = shaderMaterial;
 
 Extracting the appropriate sections of Javascript code allows you to transfer them to your own scenes.
 
-
 [Guide Example From CYOS Zip](/examples/cyoszip.html)
+
+This method can easily be used in the Playground.
+
+[Playgound Example From CYOS](http://www.babylonjs-playground.com/#1OH09K#1);
 
 ## Shader Code in &lt;script&gt; Tags
 
@@ -146,9 +151,9 @@ Save your code in two files, one for the Vertex Shader and one for the Fragment 
 
 These files **must** be in the same folder as your index.html page and the names of the files **must** follow this format
 
-COMMON_NAME.vertex.fx
+COMMON\_NAME.vertex.fx
 
-COMMON_NAME.fragment.fx
+COMMON\_NAME.fragment.fx
 
 The Javascript code to use the shader as material becomes
 
@@ -163,6 +168,39 @@ var shaderMaterial = new BABYLON.ShaderMaterial("shader", scene, "./COMMON_NAME"
 **Note**  ./ is neccesary before the COMMON_NAME
 
 It is also possible to access the fx files from an URL by giving the full address of the URL, 
-provide the CORS in enabled for them on their host site.
+provide CORS is enabled for them.
 
 [Guide Example From Import](/examples/importcode.html)
+
+## Shader Builder
+
+This is an extension to BabylonJS. Copy and save the [source code](https://github.com/BabylonJS/Extensions/blob/master/ShaderBuilder/Babylonx.ShaderBuilder.js) for the extension and add as
+
+```javascript
+<script>Babylonx.ShaderBuilder.js</script>
+```
+The Shader Builder engine needs to be initialised
+
+```javascript
+BABYLONX.ShaderBuilder.InitializeEngine();
+```
+
+The format for writing a ShaderBuilder is **fluent coding** and it deals with attributes and BABYLONJS uniforms automatically.  
+An example for the shader code used in 1 to 3 above would be
+
+```javascript
+mesh.material = new BABYLONX.ShaderBuilder()
+	.Map({ path: 'textures/amiga.jpg' })
+    .BuildMaterial(scene);
+```
+[Guide Example using ShaderBuilder](/examples/basiccodeSB.html)
+
+This method can be used in the Playground. However it does require the loading of the ShaderBuilder Javascript file and an onLoad 
+function before it can be called.
+
+[Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#1)
+
+# Further Reading
+
+[Introduction To Shaders in BabylonJS](/advanced/Overview.html)  
+[ShaderMaterial Object](/advanced/Shader_Material.html)

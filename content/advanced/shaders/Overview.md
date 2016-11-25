@@ -115,6 +115,7 @@ float NAME(typed parameters) {
 Both the Vertex and the Fragment Shader are run from a function which must be called main and be of type void since it returns 
 no result. It must also must type the empty parameter list as void.
 
+```
 void main(void) {
 	*code*
 }
@@ -134,5 +135,6 @@ More details on this can be found below.
 
 # Further Reading
 
-[Putting Shader Code in BabylonJS](/advanced/Putting.html)
+[Putting Shader Code in BabylonJS](/advanced/Putting.html)  
+[ShaderMaterial Object](/advanced/Shader_Material.html)
 
