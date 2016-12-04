@@ -99,7 +99,7 @@ box.dispose();
 
 ### Vertex Shader
 
-'''
+```
 // Attributes
 attribute vec3 position;
 attribute vec3 normal;
@@ -136,7 +136,7 @@ void main(void) {
 
 ### Set Material
 
-```Javascript
+```javascript
 var shaderMaterial = new BABYLON.ShaderMaterial("shader", scene, {
 		vertexElement: "vertexShaderCode",
 		fragmentElement: "fragmentShaderCode",
@@ -154,7 +154,7 @@ shaderMaterial.setTexture("textureSampler", mainTexture);
 
 ### Animation Loop
 
-```Javascript
+```javascript
 var time = 0;
 scene.registerBeforeRender(function() {
     boxes.material.setFloat("time", time);
@@ -164,7 +164,9 @@ scene.registerBeforeRender(function() {
 
 ## Shader Builder Code
 
-```Javascript
+### Shader Code
+
+```javascript
 BABYLONX.ShaderBuilder.InitializeEngine();
 		
 var shaderMaterial =   new BABYLONX.ShaderBuilder()             

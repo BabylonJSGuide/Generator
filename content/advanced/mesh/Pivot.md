@@ -87,6 +87,6 @@ For a general way of placing a pivot for a mesh to rotate around any axis see [C
 # Further Reading
 
 ## Snippets
-[Centres of Rotation and Enlargement](/snippets/pivot.html)
+[Centres of Rotation and Enlargement](/snippets/Pivot.html)
 
 

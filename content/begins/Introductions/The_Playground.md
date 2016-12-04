@@ -53,5 +53,5 @@ which contains everything necessary to run the code in your browser, including l
 
 [An extended tutorial on the Playground](http://doc.babylonjs.com/generals/The_Playground_Tutorial) can be found in the Official Documentation.
 
-[Textures Directly Available to the Playground](/basic/Playground_Textures.html)
+[Textures Directly Available to the Playground](/basics/Playground_Textures.html)
 

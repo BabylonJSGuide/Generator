@@ -161,8 +161,8 @@ of coding with BabylonJS.
 [BabylonJS Main Website](http://www.babylonjs.com/)  
 [BabylonJS Playground](http://babylonjs-playground.com)  
 [PEP](https://github.com/jquery/PEP)  
-[hand.js](https://github.com/Deltakosh/handjs)
-[BabylonJSGuide Github](https://github.com/BabylonJSGuide/BabylonJSGuide.github.io)
+[hand.js](https://github.com/Deltakosh/handjs)  
+[BabylonJSGuide Github](https://github.com/BabylonJSGuide/BabylonJSGuide.github.io)  
 [Markdown Files for Guide Github](https://github.com/BabylonJSGuide/Generator)
 
 
