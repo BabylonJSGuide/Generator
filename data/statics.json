@@ -342,7 +342,7 @@
       ]
    }
   ],
- "indx": [
+ "item_list": [
    {
       "title": "All",
       "name": "All",
@@ -350,12 +350,12 @@
    },
    {
      "title": "Index",
-      "name": "indx",
+      "name": "item_list",
       "desc": "Index",
       "files": [
         {
           "title": "Guide Index",
-          "filename": "Indx"
+          "filename": "Item_list"
         }
       ]
    }

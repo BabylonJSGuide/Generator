@@ -12,7 +12,7 @@ var express = require('express'),
 
 
 /**
- * Show the indx list
+ * Show the item_list list
  */
 router.get('/', function(req, res) {
     var options = {
@@ -24,24 +24,24 @@ router.get('/', function(req, res) {
         'Cache-Control': 'no-cache',
         'Content-type':'text/html'
     });
-    res.sendFile('./indx.html', options);
+    res.sendFile('./item_list.html', options);
 });
 
-router.get('/:indx', function(req, res){
+router.get('/:item_list', function(req, res){
     var options = {
         root: path.join(appRoot, 'public/html')
     };
 
-    var indx = req.params.indx;
+    var item_list = req.params.item_list;
 
-    fs.exists(path.join('public/html/indx/', indx +'.html'), function (exists) {
+    fs.exists(path.join('public/html/item_list/', item_list +'.html'), function (exists) {
         if (exists) {
             res.status(200);
             res.set({
                 'Cache-Control': 'no-cache',
                 'Content-type':'text/html'
             });
-            res.sendFile('./indx/'+ indx +'.html', options);
+            res.sendFile('./item_list/'+ item_list +'.html', options);
         } else {
             res.status(404).render('errorpages/404');
         }
