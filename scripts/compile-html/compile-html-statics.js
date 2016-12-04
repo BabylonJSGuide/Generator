@@ -44,7 +44,8 @@ module.exports = function(done){
         "intermediate",
         "advanced",
         "gamelets",
-        "snippets"
+        "snippets",
+        "index"
     ];
 
     var globalObj = {};
