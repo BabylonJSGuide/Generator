@@ -350,12 +350,12 @@
    },
    {
      "title": "Index",
-      "name": "index",
+      "name": "indx",
       "desc": "Index",
       "files": [
         {
           "title": "Guide Index",
-          "filename": "Index"
+          "filename": "Indx"
         }
       ]
    }
