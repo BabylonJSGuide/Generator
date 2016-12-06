@@ -254,8 +254,12 @@
           "filename": "Shader_Material"
         },
         {
-          "title": "Moving Vertically with Shader Code",
+          "title": "A Vertical Wave with Shader Code",
           "filename": "Writing1"
+        },
+        {
+          "title": "Fireworks with Shader Code",
+          "filename": "Writing2"
         }
       ]
    }

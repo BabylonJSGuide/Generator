@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Vertical Movement with Vertex Shader
+PG_TITLE: Vertical Wave with Vertex Shader
 ---
 
-# Vertical Movement with Vertex Shader
+# Vertical Wave with Vertex Shader
 
 As with any code it is important to have a firm idea of what you want to achieve, what is possible to code and 
 a design. 
@@ -50,7 +50,7 @@ Dividing these left and right hand edge positions by *spacing* gives a pair of n
 
 -2, -2 + (*size*/*spacing*), &nbsp;&nbsp;&nbsp;-1, -1 + (*size*/*spacing*), &nbsp;&nbsp;&nbsp;0, (*size*/*spacing*), &nbsp;&nbsp;&nbsp;1, 1 + (*size*/*spacing*), &nbsp;&nbsp;&nbsp;2, 2 + (*size*/*spacing*).
 
-Since *spacing* = *size* + *gap*  *spacing* \> *size* and so (*size*/*spacing*) \< 1 and it follows that applying the 
+Since *spacing* = *size* + *gap*  *spacing* &gt; *size* and so (*size*/*spacing*) &lt; 1 and it follows that applying the 
 function floor to each of these numbers gives 
 
 -2, -2, &nbsp;&nbsp;&nbsp;-1, -1, &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;0, 0, &nbsp;&nbsp;&nbsp;1, 1, &nbsp;&nbsp;&nbsp;2,2.
@@ -207,10 +207,10 @@ scene.registerBeforeRender(function () {
 
 ## Vertical Wave
 
-[Guide Example Vertical Wave - Shader Material](/examples/bouncecode.html)
+[Guide Example - Shader Material](/examples/bouncecode.html)
 
-[Playground Example Vertical Wave - Shader Material](http://www.babylonjs-playground.com/#1OH09K#3)
+[Playground Example - Shader Material](http://www.babylonjs-playground.com/#1OH09K#3)
 
-[Guide Example Vertical Wave - Shader Builder](/examples/bouncecodeSB.html)
+[Guide Example - Shader Builder](/examples/bouncecodeSB.html)
 
-[Playground Example Vertical Wave - Shader Builder)](http://www.babylonjs-playground.com/#1NXPC3#4)
+[Playground Example - Shader Builder)](http://www.babylonjs-playground.com/#1NXPC3#4)
