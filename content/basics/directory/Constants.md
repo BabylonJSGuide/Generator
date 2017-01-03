@@ -43,4 +43,21 @@ BABYLON.Axis.X
 BABYLON.Axis.Y  
 BABYLON.Axis.Z
 
+## Animation
+
+Specifies the property types 
+
+BABYLON.Animation.ANIMATIONTYPE_COLOR3  
+BABYLON.Animation.ANIMATIONTYPE_FLOAT  
+BABYLON.Animation.ANIMATIONTYPE_MATRIX  
+BABYLON.Animation.ANIMATIONTYPE_QUATERNION  
+BABYLON.Animation.ANIMATIONTYPE_VECTOR2  
+BABYLON.Animation.ANIMATIONTYPE_VECTOR3  
+
+Specifies the loop methods
+
+BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE - Restart the animation from initial value  
+BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT - Stop the animation at the final value  
+BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE - Repeat the animation incrementing using key values  
+
 

@@ -153,6 +153,11 @@ instance|_(LineMesh)_ an instance of a tube to be updated|null
 You must set at least the _shape_ and _path_ properties.
 On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _scale_ and _rotation_ properties.
 
+In whatever direction you want to extrude the shape the design of the shape should be based on coordinates 
+in the XOY plane, ie the z component should be 0. Some twisting to this base shape can be applied by leaving the x and y components 
+unchanged but allowing the z component to be non zero but not taking the shape too far from generally lying in th XOY plane. Otherwise 
+results will not be as you might expect.
+
 Example :
 ```javascript
 // creates an extended shape
@@ -175,7 +180,9 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 
-[A Playground Example of an Extended Shape](http://www.babylonjs-playground.com/#165IV6#16)
+[A Playground Example of a Shape in XOY plane in Z direction with Rotation](http://www.babylonjs-playground.com/#165IV6#16)
+[A Playground Example of the Same Shape in XOY plane in Y direction with Rotation](http://www.babylonjs-playground.com/#165IV6#18)
+[A Playground Example of a Shape in YOZ plane in Z direction with Rotation - Strange!](http://www.babylonjs-playground.com/#165IV6#19)
 
 ## Custom Extruded Shapes
 You must set at least the _shape_ and _path_ properties.

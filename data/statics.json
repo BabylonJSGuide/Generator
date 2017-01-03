@@ -88,6 +88,17 @@
           "filename": "Materials"
         }
       ]
+   },
+   {
+     "title": "Animations",
+      "name": "animations",
+      "desc": "Basic Animations",
+      "files": [
+        {
+          "title": "Introduction to Animating",
+          "filename": "Starter"
+        }
+      ]
    }
  ],
  "intermediate": [
