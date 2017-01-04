@@ -18,16 +18,16 @@ The BabylonJS method is much closer to stop motion.
 
 Using an animated gif file a sequence of images, _frames_ are combined to give the impression of movement.
 
-![Horse - Frames][/img/horse_frames.jpg]
+![Horse - Frames](/img/horse_frames.jpg)
 
-![Horse Animation][/img/Horse_gif_slow.gif] from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Horse_gif_slow.gif)
+![Horse Animation](/img/Horse_gif_slow.gif) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Horse_gif_slow.gif)
 
 Each individual image is one _frame_ of the animation.
 
 Software used to create an animated gif often gives the opportunity to set a time for each frame to be displayed - 0.2 seconds in the 
 example below.
 
-![Horse - Rate][/img/horse_rate.jpg]
+![Horse - Rate](/img/horse_rate.jpg)
 
 ### Stop Motion Animation
 
