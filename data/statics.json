@@ -97,6 +97,10 @@
         {
           "title": "Introduction to Animating",
           "filename": "Starter"
+        },
+        {
+          "title": "Combining Animations",
+          "filename": "Combine"
         }
       ]
    }

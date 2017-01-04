@@ -8,6 +8,8 @@ PG_TITLE: Index
 [Ambient - Color](/basics/Materials)  
 [Anaglyph - Camera](/intermediate/Cameras)
 [Animation - Introduction](/basics/Starter)  
+[Animation - Concurrent](/basics/Combine)  
+[Animation - Consecutive](/basics/Combine)  
 [Arc Rotate - Camera](/basics/Cameras)  
 
 **B**  
@@ -58,7 +60,6 @@ PG_TITLE: Index
 [Lines - Create Mesh](/intermediate/Parametric_Shapes)  
 [LineSystem - Create Mesh](/intermediate/Parametric_Shapes)  
 [Loop - Animation](/basics/Starter)
-[Loop Relative - Animation](/basics/Relative)
 
 **O**  
 [Offsetting - Texture](/intermediate/Materials)  

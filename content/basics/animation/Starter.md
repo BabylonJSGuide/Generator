@@ -162,7 +162,8 @@ number propert such as position.x
 
     BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE - Restart the animation from initial value  
     BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT - Stop the animation at the final value  
-    BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE - Repeat the animation incrementing using key values  
+    BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE - Repeat the animation incrementing using key value gradients. In this way, for example, a _clip_ showing 
+    a character's legs in a walking motion can be looped to show the character progressing across the scene.
 
 ## beginAnimation
 
