@@ -7,7 +7,7 @@ PG_TITLE: Combining Animations
 
 Simply set up more animations and add to the BabylonJs object's animations array. 
 
-For example adding a rotation animation to the [very simple slide animation](http://www.babylonjs-playground.com/#9WUJN#5) gives:
+For example adding a rotation animation to the [very simple slide animation](http://www.babylonjs-playground.com/#9WUJN#11) to get:
 
 ### Slide and Rotate
 
@@ -34,11 +34,9 @@ keyFramesR.push({
 
 yRot.setKeys(keyFramesR);
 
-box.animations.push(xSlide, yRot);
-
 ```
 
-[Playground Example Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#5)
+[Playground Example Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#12)
 
 ### Slide and Faster Rotation Rate
 
@@ -67,11 +65,9 @@ keyFramesR.push({
 
 yRot.setKeys(keyFramesR);
 
-box.animations.push(xSlide, yRot);
-
 ```
 
-[Playground Example Slide and Faster Rotate](http://www.babylonjs-playground.com/#9WUJN#6)
+[Playground Example Slide and Faster Rotate](http://www.babylonjs-playground.com/#9WUJN#13)
 
 ### Slide and Varying Rotation Rate
 
@@ -100,24 +96,24 @@ keyFramesR.push({
 
 yRot.setKeys(keyFramesR);
 
-box.animations.push(xSlide, yRot);
-
 ```
 
-[Playground Example Slide and Varying Rotation Rate](http://www.babylonjs-playground.com/#9WUJN#6)
+[Playground Example Slide and Varying Rotation Rate](http://www.babylonjs-playground.com/#9WUJN#14)
 
 ## Consecutive Animations
 
-In order to have one animation follow another then a further parameter needs to be added to the beginAnimation function. This parameter is 
-itself a function to be called when the animation began by beginAnimation is ended.
+In order to have one animation follow another then a further parameter needs to be added to the beginDirectAnimation function. This parameter is 
+itself a function to be called when the animation began by beginDirectAnimation is ended.
 
 In fact two new parameters are needed since the function to be called is the sixth parameter and so the fifth parameter position needs to be filled.
 
-### beginAnimation and Parameters
+### beginDirectAnimation and Parameters
 
 scene.beginAnimation(target, start frame, end frame, loop, speed, on animation end);   
 
 * *target* - _BabylonJS Object_, the BabylonJS object to be animated
+
+* *animations* - _array_, of all the animations to apply to the target
 
 * *start frame* - _number_, the frame at which to start the animation
 
@@ -131,38 +127,44 @@ scene.beginAnimation(target, start frame, end frame, loop, speed, on animation e
 
 ### Examples
 
-The following are alterations to [Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#5)
+The following are alterations to [Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#12)
 
 In the first example the box rotates for 5 seconds then goes into a looped slide.
 
-Code changes to beginAnimation are looping becomes false, speed maintained as default 1, and the function nextAnimation is called as the first ends.
+Code changes to beginDirectAnimation are looping becomes false, speed maintained as default 1, and the function nextAnimation is called as the first ends.
 
 ```javascript
-scene.beginAnimation(box, 0, 2 * frameRate, false, 1, nextAnimation);
+scene.beginDirectAnimation(box, [yRot], 0, 2 * frameRate, false, 1, nextAnimation);
 ```
 
 Additional function added before this is
 
 ```javascript
 var nextAnimation = function() {
-    box.animations = [];
-    box.animations.push(xSlide);
-    scene.beginAnimation(box, 0, 2 * frameRate, true);
+    scene.beginDirectAnimation(box, [xSlide], 0, 2 * frameRate, true);
 }
 ```
 
-[Playground Example Consecutive Animations Rotate then Slide](http://www.babylonjs-playground.com/#9WUJN#8)
+[Playground Example Consecutive Animations Rotate then Slide](http://www.babylonjs-playground.com/#9WUJN#15)
 
 
 In the second example the rotation is continued as the box goes into a looped slide.
 
-Code changes to the nextAnimation function is to remove the resetting of the animations array
-
 ```javascript
 var nextAnimation = function() {
-    box.animations.push(xSlide);
-    scene.beginAnimation(box, 0, 2 * frameRate, true);
+    scene.beginDirectAnimation(box, [yRot, xSlide], 0, 2 * frameRate, true);
 }
 ```
 
-[Playground Example Consecutive Animations Rotate then Rotate and Slide](http://www.babylonjs-playground.com/#9WUJN#8)
+[Playground Example Consecutive Animations Rotate then Rotate and Slide](http://www.babylonjs-playground.com/#9WUJN#16)
+
+# Further Reading
+
+## Basic
+
+[Introduction to Animating](/basics/Starter.html)
+
+## Intermediate
+
+
+## Advanced

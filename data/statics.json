@@ -297,6 +297,17 @@
       ]
    },
    {
+     "title": "Basic",
+      "name": "basic",
+      "desc": "BasicGamelets",
+      "files": [
+        {
+          "title": "A Sequence of Animations",
+          "filename": "Sequence"
+        }
+      ]
+   },
+   {
      "title": "Intermediate",
       "name": "intermediate",
       "desc": "Intermediate Gamelets",

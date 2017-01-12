@@ -4,7 +4,7 @@ PG_TITLE: Animating - An Introduction
 # Animating - An Introduction
 
 One way to animate things in BabylonJS is to change their properties within a scene.registerBeforeRender or scene.registerAfterRender loop. You will find many 
-of the Playground examples within the Guide using this method. However BabylonJS also provides animating methods based on a timed frame system. Given he right data 
+of the Playground examples within the Guide using this method. However BabylonJS also provides animating methods based on a timed frame system. Given the right data 
 BabylonJS calculates and draws a specific frame of the animation at a specific time independently of the scene rendering rate.
 
 ## Ways of Animating
@@ -60,23 +60,36 @@ The extent of the changes and when they take place are set in an array of key fr
 
 The following terms will have the given meaning within the tutorials about animating.
 
-* _Animation_ - describes one property to be changed, the rate of change of the property in frames per second, the type of the 
-property being changed and looping conditions.
+* _Performer_ an item that can be animated, could be a mesh, a light or camera for example.
 
-* _Clip_ - The viewable result of animating a mesh, camera or light over a given time period. In practice there are two types of _clip_ a
+* _Frame_ - an animation frame not a rendered frame of the scene. 
+
+* _Animation_ - similar to a play or film script but applies to just one property of a performer. It consists of 
+  * the property to be changed, for example, position, intensity or rotation   
+  * the rate of change of the property in frames per second,  
+  * the type of the property being changed, for example vector, floating point number or matrix,  
+  * looping conditions,
+  * key values of the property at key frames.
+
+* _Scripted Performer_ - The performer plus all the animations to be undertaken by the performer.
+
+* _Performance_ - The scripted performer and the actions done by the performer following the script. In BabylonJS this is the *animatable* object.  
+
+* _Clip_ - The viewable result of a performance. In practice there are two types of _clip_ a
 _game clip_ and a _movie clip_. In a _movie clip_ the user has no control over the camera and the _clip_ is viewed according to the _animation_ of the camera 
 as set by the creator of the _clip_. In a _game clip_ the user is able to move the camera as determined by the type of camera used in the scene. Unless 
-it is likely to cause any confusion just the term _clip_ will be used throught the guide when writing about animation.
+it is likely to cause any confusion just the term _clip_ will be used throught the guide when writing about animating.
 
-* _Frame_ - is an animation frame not a rendered frame of the scene. 
+* _Cartoon_ - A series of _clips_ played at timed intervals.
+
 
 ## Designing a Clip
 
-The first step is to decide what you want to see in a _clip_. This gives the item to be animated and what properties of the item are to be changed.
+The first step is to decide what you want to see in a _clip_, that is what is the _performaance_ to be. This gives the performer and its animation.
 
 ### A very simple example
 
-In this _game clip_ a box is to slide between two places once every second. The box will be able to be viewed from any angle. 
+In this _game clip_ a box, the _performer_ is to slide between two places once every second. The box will be able to be viewed from any angle. 
 
 The first stage design is to sketch what is needed at key time points, a little like an animated gif design.
 
@@ -122,19 +135,14 @@ keyFrames.push({
 xSlide.setKeys(keyFrames);
 ``` 
 
-The animation is now fully made and can be applied to the box
+The animation is now fully made and can be applied to the box resulting in a _performance_ (animatable) by .
+
 
 ```javascript
-box.animations.push(xSlide);
+scene.beginDirectAnimation(box, [xSlide], 0, 2 * frameRate, true);
 ```
 
-To start the animation use
-
-```javascript
-scene.beginAnimation(box, 0, 2 * frameRate, true);
-```
-
-[Playground Example for Above](http://www.babylonjs-playground.com/#9WUJN#4)
+[Playground Example for Above](http://www.babylonjs-playground.com/#9WUJN#11)
 
 # Functions and Parameters for Animating
 
@@ -161,15 +169,17 @@ number propert such as position.x
 * *loop mode* - _number optional_, This can be set using the following Parameters
 
     BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE - Restart the animation from initial value  
-    BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT - Stop the animation at the final value  
+    BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT - Pause the animation at the final value  
     BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE - Repeat the animation incrementing using key value gradients. In this way, for example, a _clip_ showing 
     a character's legs in a walking motion can be looped to show the character progressing across the scene.
 
-## beginAnimation
+## beginDirectAnimation
 
-scene.beginAnimation(target, start frame, end frame, loop);   
+scene.beginDirectAnimation(target, animations, start frame, end frame, loop);   
 
 * *target* - _BabylonJS Object_, the BabylonJS object to be animated
+
+* *animations* - _array_, of all the animations to apply to the target
 
 * *start frame* - _number_, the frame at which to start the animation
 
@@ -181,6 +191,7 @@ scene.beginAnimation(target, start frame, end frame, loop);
 
 ## Basic
 
+[Combining Animations](/basics/Combine.html)
 
 ## Intermediate
 
