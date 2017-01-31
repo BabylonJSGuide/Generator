@@ -42,6 +42,12 @@ mesh.updateVerticesData(BABYLON.VertexBuffer.ColorKind, colors);
 mesh.updateVerticesData(BABYLON.VertexBuffer.UVKind, uvs);
 ```
 
+*Note: * When creating your own custom mesh to make it updatable you need to add a second parameter with value true when applying the mesh to  the vertex data.
+
+```javascript
+vertexData.applyToMesh(customMesh, true);
+```
+
 ## Playgrounds
 
 [Playground Example Scaling Positions](http://www.babylonjs-playground.com/#VE6GP#4)
@@ -51,5 +57,6 @@ mesh.updateVerticesData(BABYLON.VertexBuffer.UVKind, uvs);
 
 # Further Reading
 
-[NCustom Meshes](/advanced/Custom.html)
+[Custom Meshes](/advanced/Custom.html)  
 [Normals in BJS](/advanced/Normals.html)
+

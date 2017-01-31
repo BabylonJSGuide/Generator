@@ -15,9 +15,9 @@ Since the aim is to show how the movie clip is made the room and door will be si
 
 ### Performers
 
-Camera  - Universal
-Door - Hinged on right hand side, opening inwards
-Spot Lights - with spheres to show position
+Camera  - Universal  
+Door - Hinged on right hand side, opening inwards  
+Spot Lights - with spheres to show position  
 
 ### Sequence Timetable
 
@@ -36,7 +36,7 @@ The camera will hold its position for 2 seconds as the door opens then at time 5
 
 There will be no rotation of the camera for 9 seconds then camera will take until time 14 seconds to rotate 180 degrees to face the door.
 
-Key values for the camera will be its positions at frames 0 * frame rate, 3 * frame rate, 5 * frame rate and 8 * frame rate and its rotation at 9 * frame rate and 14 * frame rate.  
+Key values for the camera will be its positions at frames 0, 3, 5 and 8 seconds and its rotation at 0, 9 and 14 seconds.  
 
 ```javascript
 //for camera move forward
@@ -174,7 +174,7 @@ lightDimmer.setKeys(light_keys);
 
 Now just run all the clips simulaneously 
 
-'''javascript
+```javascript
 scene.beginDirectAnimation(camera, [movein, rotate], 0, 25 * frameRate, false);
 scene.beginDirectAnimation(hinge, [sweep], 0, 25 * frameRate, false);
 scene.beginDirectAnimation(spotLights[0], [lightDimmer], 0, 25 * frameRate, false);
@@ -183,6 +183,6 @@ scene.beginDirectAnimation(spotLights[1], [lightDimmer.clone()], 0, 25 * frameRa
 
 ## The Finished Sequence
 
-[Playground Example of the Cartoon](http://www.babylonjs-playground.com/#2L26P1#7)
+[Playground Example of the Cartoon](http://www.babylonjs-playground.com/#2L26P1#8)
 
 
