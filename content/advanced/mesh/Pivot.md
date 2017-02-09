@@ -50,43 +50,40 @@ Note: Any movement of the pivot(sphere) will result in the pilot being moved.
 
 [Playground Example - Rotating Child](http://www.babylonjs-playground.com/#1JLGFP#7)
 
-## Wholly Using Matrices
+## Pivoting with No Parenting
 
-The pilot is positioned relative to the pivot position and the rotation is carried out by the product 
-of the matrices that translate the pilot to the pivot, rotates pilot and restores the pilot by inverting previous translation.
+As in *[Using a Pivot](/advanced/Pivots.html)* to get the pilot and pivot in the correct position the pilot is placed where the pivot is going to be 
+and the pivot translation is set using the displacement of the pilot position from the pivot position.
 
 ```javascript
-sphere.position = pivotAt;
+var pivotAt = new BABYLON.Vector3(1, 3, 2);
+var pilotStart = new BABYLON.Vector3(3, 6, 6);
 
-pilot.position = pivotAt.add(pilotStart);
+pilot.position = pivotAt; 
 
-var m;  //translation matrix
-var invm; //inverse matrix of m
-var r; //rotation matrix 
-var ar; //matrix for actual rotation required 
-	
-  /*-------------------Animation--------------------*/
-	var i=0;
-    scene.registerAfterRender(function() {	
-		m = BABYLON.Matrix.Identity().setTranslation(pilot.position.subtract(pivotAt));
-		invm = m.clone().invert();
-		r = BABYLON.Matrix.RotationAxis(axis,(i++) * 0.02);
-		ar = m.multiply(r).multiply(invm);
-		pilot.setPivotMatrix(ar);
-	});
+var pivotTranslate = pilotStart.subtract(pivotAt);
+pilot.setPivotMatrix(BABYLON.Matrix.Translation(pivotTranslate.x, pivotTranslate.y, pivotTranslate.z));
 ```
-[Playground Example - Rotating Mesh No Parenting](http://www.babylonjs-playground.com/#1JLGFP#8)
 
-**Note:** as can be seen in the Playgrounds below, **provided the axis is not changed**, the pivot position can be changed without re-positioning the pilot. 
-For a general way of placing a pivot for a mesh to rotate around any axis see [Centres of Rotation and Enlargement](/snippets/pivot.html).
+```javascript	
+/*-------------------Rotation Animation--------------------*/
+var angle=0.025;   
+scene.registerAfterRender(function() {
+    pilot.rotate(axis, angle, BABYLON.Space.LOCAL);  
+});
+```
+[Playground Example - Rotating Mesh No Parenting](http://www.babylonjs-playground.com/#1JLGFP#19)
 
-[Playground Example - Rotating Mesh Moving Pivot along Axis](http://www.babylonjs-playground.com/#1JLGFP#9)
+[Playground Example - Rotating Mesh Moving Pivot along Axis](http://www.babylonjs-playground.com/#1JLGFP#20)
 
-[Playground Example - Rotating Mesh Moving Pivot](http://www.babylonjs-playground.com/#1JLGFP#10)
+[Playground Example - Rotating Mesh Moving Pivot](http://www.babylonjs-playground.com/#1JLGFP#21)
 
 # Further Reading
 
-## Snippets
-[Centres of Rotation and Enlargement](/snippets/Pivot.html)
+## Advanced
+[Using a Pivot](/advanced/Pivots.html)
+
+
+
 
 

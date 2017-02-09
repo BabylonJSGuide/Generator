@@ -207,6 +207,10 @@
           "filename": "Rotate"
         },
         {
+          "title": "Using a Pivot",
+          "filename": "Pivots"
+        },
+        {
           "title": "Rotation Around an Axis Through a Pivot",
           "filename": "Pivot"
         },
@@ -352,10 +356,6 @@
         {
           "title": "Increasing Facets",
           "filename": "Increasing_Facets"
-        },
-        {
-          "title": "Centres of Rotation and Enlargement",
-          "filename": "Pivot"
         },
         {
           "title": "Show Vertex Normals",

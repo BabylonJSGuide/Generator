@@ -66,6 +66,7 @@ PG_TITLE: Index
 [Opacity - Texture](/intermediate/Materials)  
 
 **P**  
+[Pivot - Using](/advanced/Pivots) 
 [Plane - Create Mesh](/basics/Shapes)  
 [Playground - Textures Available](/basics/Playground_Textures)  
 [Playground - What is It?](/begins/Introducing_Babylonjs)  
@@ -86,8 +87,9 @@ PG_TITLE: Index
 [Rotate - Mesh](/intermediate/Translate)  
 [Rotate - Mesh Details](/advanced/Rotate)  
 [Rotation - Mesh](/basics/Position)  
+[Rotation Adding - Mesh](/intermediate/Translate)
 [Rotation Axis - Mesh](/basics/Axis)  
-[Rotation Pivot - Mesh](/advanced/Pivot)  
+[Rotation Axis with Pivot - Mesh](/advanced/Pivot)  
 [Rotation Quaternion - Mesh](/basics/Axis)  
 
 **S**  

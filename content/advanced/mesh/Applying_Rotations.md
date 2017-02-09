@@ -5,7 +5,7 @@ PG_TITLE: Applying Rotation Conventions BJS
 # Applying Rotation Conventions BJS
 
 There are several methods of achieving rotations within BabylonJS including the use of, Euler Angles, Quaternions and Yaw, Pitch and Roll. All of which 
-have in the context of BabylonJS have a particular convention when used.
+in the context of BabylonJS have a particular convention when used.
 
 What each method has in common is given a set of data they have their own fixed manner to produce a rotation of a shape. 
 For example using 
@@ -52,6 +52,7 @@ this gives 24 different possibilities. Most, if not all, of these are in use in 
 the system you are working in uses.
 
 In BabylonJS two of these possibilities are immediately accesible using mesh.rotation if you are careful about parameter order.
+
 ### ZXY *World Axes*
 
 Rotations alpha about X, beta about Y and gamma about Z in the order ZXY using world axes.

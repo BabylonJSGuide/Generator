@@ -6,11 +6,13 @@ PG_TITLE: Translate and Rotate
 In mathematics a translation is a vector displacement of an object from its current position to a new position. A rotation turns an object 
 through an angle about an axis, which is a fixed line. When using rotate on a mesh the axis passes through the _local origin_ of the mesh.
 
-View the two playgrounds below to see a translation and a rotation in progress.
+Unlike mesh.rotation using mesh.rotate adds new angles of roation to previous ones.
 
-[Playground Example Translation](http://www.babylonjs-playground.com/#1JLGFP)
+View the two playgrounds below to see a translation and a rotation, using rotate, in progress.
 
-[Playground Example Rotation](http://www.babylonjs-playground.com/#1JLGFP#3)
+[Playground Example Translate](http://www.babylonjs-playground.com/#1JLGFP)
+
+[Playground Example Rotate](http://www.babylonjs-playground.com/#1JLGFP#3)
 
 # Frames of Reference
 
@@ -43,6 +45,24 @@ pilot.rotate(new BABYLON.Vector3(-1, 3, -10), 7 * Math.PI / 12, BABYLON.Space.LO
 
 Should you wish to rotate a mesh about a pivot that is not the _local origin_ of the mesh then there are method to do so. See the links in further reading.
 
+## Add Rotations
+
+From BabylonJS version 2.6 there is a new property that also allows the accumulation of rotations but only about **local axes**, this is mesh.addRotation(x, y, z). 
+Only one of x, y or z should be non zero
+
+```javascript
+mesh.addRotation(Math.PI/2, 0, 0).addRotation(0, Math.PI/4, 0).addRotation(0, Math.PI/6, 0)
+```
+Whatever the current rotation of the mesh this will rotate it further first around the *local X axis*, followed by a rotation around the *local Y axis* followed by 
+a rotation around the *local Z axis*.
+
+In the following playground the sequence of boxes shows the result of applying a rotation around the *local Z axis*, followed by a rotation around the *local Y axis* followed by 
+a rotation around the *local X axis*.
+
+[Playground Example - Addition of Rotations](http://www.babylonjs-playground.com/#1PON40#8)
+
+[Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
+
 # Tip
 When animating with translate and rotate use scene.register**After**Render rather than scene.register**Before**Render
 
@@ -52,6 +72,6 @@ When animating with translate and rotate use scene.register**After**Render rathe
 [A Simple Car Following a Path](/gamelets/Car.html)
 
 ## Advanced
-[Rotate About a Pivot Other than the Local Origin](/advanced/Pivot.html)
-
+[Using Pivots](/advanced/Pivots.html)   
+[Rotate About a Pivot Other than the Local Origin](/advanced/Pivot.html)  
 [Translate and Rotate in Detail](/advanced/Rotate.html)
