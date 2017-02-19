@@ -52,12 +52,12 @@ camera.maxCameraSpeed = 10
 // This attaches the camera to the canvas
    camera.attachControl(canvas, true);
 
-// NOTE:: SET CAMERA TARGET AFTER THE TARGET'S CREATION
+// NOTE:: SET CAMERA TARGET AFTER THE TARGET'S CREATION AND NOTE CHANGE FROM BABYLONJS V 2.5
 //targetMesh created here
-camera.target = targetMesh;   
-
+camera.target = targetMesh;   // version 2.4 and earlier
+camera.lockedTarget = targetMesh; //version 2.5 onwards
 ```
-[A Playground Example of a Follow Camera following a moving target](http://www.babylonjs-playground.com/#12WBC#78)
+[A Playground Example of a Follow Camera following a moving target](http://www.babylonjs-playground.com/#12WBC#84)
 
 
 ## AnaglyphCameras

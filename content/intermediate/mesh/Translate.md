@@ -10,9 +10,8 @@ Unlike mesh.rotation using mesh.rotate adds new angles of roation to previous on
 
 View the two playgrounds below to see a translation and a rotation, using rotate, in progress.
 
-[Playground Example Translate](http://www.babylonjs-playground.com/#1JLGFP)
-
-[Playground Example Rotate](http://www.babylonjs-playground.com/#1JLGFP#3)
+[Playground Example - Translate](http://www.babylonjs-playground.com/#1JLGFP)  
+[Playground Example - Rotate](http://www.babylonjs-playground.com/#1JLGFP#3)
 
 # Frames of Reference
 
@@ -59,8 +58,7 @@ a rotation around the *local Z axis*.
 In the following playground the sequence of boxes shows the result of applying a rotation around the *local Z axis*, followed by a rotation around the *local Y axis* followed by 
 a rotation around the *local X axis*.
 
-[Playground Example - Addition of Rotations](http://www.babylonjs-playground.com/#1PON40#8)
-
+[Playground Example - Addition of Rotations](http://www.babylonjs-playground.com/#1PON40#8)  
 [Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
 
 # Tip
