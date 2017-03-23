@@ -332,6 +332,25 @@
           "filename": "Car_Driven"
         }
       ]
+   },
+   {
+     "title": "Collisions",
+      "name": "collisions",
+      "desc": "Collision Gamelets",
+      "files": [
+        {
+          "title": "An Introduction",
+          "filename": "Collide_Intro"
+        },
+        {
+          "title": "Issues",
+          "filename": "Issues"
+        },
+        {
+          "title": "Simple Particle Collisions on a Grid",
+          "filename": "Grid_Moves"
+        }
+      ]
    }
   ],
  "snippets": [

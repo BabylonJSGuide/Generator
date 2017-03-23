@@ -85,7 +85,7 @@ it is likely to cause any confusion just the term _clip_ will be used throught t
 
 ## Designing a Clip
 
-The first step is to decide what you want to see in a _clip_, that is what is the _performaance_ to be. This gives the performer and its animation.
+The first step is to decide what you want to see in a _clip_, that is what is the _performance_ to be. This gives the performer and its animation.
 
 ### A very simple example
 
