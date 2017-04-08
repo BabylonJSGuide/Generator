@@ -349,6 +349,10 @@
         {
           "title": "Simple Particle Collisions on a Grid",
           "filename": "Grid_Moves"
+        },
+        {
+          "title": "Slow Particles",
+          "filename": "Slow_Collide"
         }
       ]
    }

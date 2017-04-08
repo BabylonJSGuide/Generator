@@ -6,7 +6,7 @@ PG_TITLE: Simple Particle Collisions Using a Grid
 
 In this case an attempt is made to produce a box that will contain many particles, each a sphere of the same diameter and mass. The idea is for the particles  to move around colliding with each other and the walls of the box, with the speed for each particle along its x axis, along its y axis and along its z axis being equal to the diameter of the particle or zero and for collisions to only take place if particles just touch the walls or each other. 
 
-It turns out that such a system is not possible when the particles are to obey the normal physical laws for colliding spheres. 
+It turns out that such a system is not possible when the particles are to obey the Newtonian physical laws for colliding spheres. 
 
 Other systems are produced, fitting the above conditions except for the rules for colliding.
 
@@ -26,31 +26,31 @@ When two particles collide in a perfectly elastic collision the Newtonian laws o
 
 For a particle to just touch a wall the wall position must be of the form (2p + 1)r, p an integer.
 
-![Fig 8](/img/collide8.jpg)  
-&nbsp;nbsp;&nbsp;&nbsp;&nbsp;Fig 8
+![Fig 9](/img/collide8.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 9
 
 ## The Particles
 
 Now having constrained the positions of the walls to ensure that the particles rebound on just touching them can the same be done for the particles themselves?
 
 If the particles have an odd number of cubes between them they will meet only when overlapping completely. To ensure they meet 
-in a touching position they need to have an even number of cubes between them, as in Fig 9.
+in a touching position they need to have an even number of cubes between them, as in Fig 10.
 
-![Fig 9](/img/collide9.jpg)  
-&nbsp;nbsp;&nbsp;&nbsp;&nbsp;Fig 9
+![Fig 10](/img/collide9.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 10
 
-Take two particles a distance 4 cubes apart in the x direction and 2 in the y direction, one travelling upwards and the other to the left, as in Fig 10.
+Take two particles a distance 4 cubes apart in the x direction and 2 in the y direction, one travelling upwards and the other to the left, as in Fig 11.
 
-![Fig 10](/img/collide10.jpg)  
-&nbsp;nbsp;&nbsp;&nbsp;&nbsp;Fig 10
+![Fig 11](/img/collide10.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 11
 
 After two frames it is clear that the two particles would collide. The first issue is that they do not actually touch or intersect. There are two ways to overcome this. One way is to make the diameter of the particle equal to the length of a diagonal across the cube. The second is to state that a collision takes place when the distance between the positions of two particles is less than or equal to the length of a diagonal of the cube.
 
-The second issue is more subtle and relates to the velocities of the particles after the collision. Fig 11 shows the velocities and positions 
+The second issue is more subtle and relates to the velocities of the particles after the collision. Fig 12 shows the velocities and positions 
 before and after a collision. 
 
-![Fig 11](/img/collide11.jpg)  
-&nbsp;nbsp;&nbsp;&nbsp;&nbsp;Fig 11
+![Fig 12](/img/collide11.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 12
 
 Consider a situation when two particles collide and obey the Newtonian rules.
 
@@ -69,15 +69,15 @@ Two simple physics could be:
 
 These at least ensure that speeds in the x, y and z directions are maintained and so particles cannot escape the box. 
 
-What about collisions between paticles in these cases? To ensure contact, by just touching alone, then we have already seen that there must be an even number of cubes between them. Placing particles in the box so this conditions exists is not straightforward so simplify this to - every particle has two cubes between them. This means that placing a particle at the cube origin and counting cube positions from this point every cube with position of the form (3m, 3n, 3p), and only these cube positions, has a particle in it. Should one particle be missing then there will be two particles with an odd number of cubes between them which could meet by overlapping, as in Fig 12.
+What about collisions between paticles in these cases? To ensure contact, by just touching alone, then we have already seen that there must be an even number of cubes between them. Placing particles in the box so this conditions exists is not straightforward so simplify this to - every particle has two cubes between them. This means that placing a particle at the cube origin and counting cube positions from this point every cube with position of the form (3m, 3n, 3p), and only these cube positions, has a particle in it. Should one particle be missing then there will be two particles with an odd number of cubes between them which could meet by overlapping, as in Fig 13.
 
-![Fig 12](/img/collide12.jpg)  
-&nbsp;nbsp;&nbsp;&nbsp;&nbsp;Fig 12
+![Fig 13](/img/collide12.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 13
 
-However setting random velocities to such particles could lead to a situation such as in Fig 13 which would again lead to particles totally overlapping. 
+However setting random velocities to such particles could lead to a situation such as in Fig 14 which would again lead to particles totally overlapping. 
 
-![Fig 13](/img/collide13.jpg)  
-&nbsp;nbsp;&nbsp;&nbsp;&nbsp;Fig 13
+![Fig 14](/img/collide13.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 14
 
 Keeping the speed restrictions in the x, y and z directions to 2r and dropping the condition that particles can only make contact by touch and letting them fully overlap allows us to place the particles in any random cube. Movement is still within the grid cubes and particles will touch but not overlap the walls of the box. 
 
@@ -94,7 +94,7 @@ The walls of the box are positioned using (2p + 1)r, for an integer p. Two paral
 
 Particles can be positioned 2jr, where j is an integer with -p &lt;= j &lt;= p
 
-To generate j randomly, use floor(p - 2p * random)
+To generate j randomly, use floor(1 - 2 * random)
 
 In the Playground code spaceMultiplier is used as the p.
 
@@ -106,8 +106,7 @@ In both these examples on particle is coloured red to aid focus on one particle 
 
 Which one do you think gives the most random type movement?
 
-[Playground Example - Swap Velocities](http://www.babylonjs-playground.com/#CGSXR)
-
+[Playground Example - Swap Velocities](http://www.babylonjs-playground.com/#CGSXR)  
 [Playground Example - Reverse Velocities](http://www.babylonjs-playground.com/#CGSXR#1)
 
 
