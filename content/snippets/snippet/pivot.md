@@ -8,7 +8,7 @@ rotate or enlarge relative to that centre.
 
 
 ## Rotate
-
+ 
 ```javascript
 BABYLON.Mesh.prototype.rotateAroundPivot = function(pivotPoint, axis, angle) {
 	if(!this._rotationQuaternion) {
