@@ -353,6 +353,10 @@
         {
           "title": "Slow Particles",
           "filename": "Slow_Collide"
+        },
+        {
+          "title": "Freely Moving Particles",
+          "filename": "Free_Collide"
         }
       ]
    }

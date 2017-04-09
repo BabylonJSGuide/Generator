@@ -110,7 +110,7 @@ As usual r is the radius of the sphere.
 
 Should a sphere be moving at right angles to a wall a distance 8r units from the wall and the speed of the sphere be 16r units then its reflected position will be its start position and the sphere will apper not to have moved. This is the stroboscopic effect.
 
-The following Playground shows sphere all starting from a distance of 8r units from two walls, all moving at right angles to the walls with speeds ranging from 20r to 12r units.
+The following Playground shows spheres all starting from a distance of 8r units from two walls, all moving at right angles to the walls with speeds ranging from 20r to 12r units.
 
 [Playground Example - Strobing](http://www.babylonjs-playground.com/#1LOEWK#2)
 
