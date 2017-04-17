@@ -59,47 +59,99 @@ This means after *frame n* is displayed the particle's position has to be reset 
 
 ## Colliding Particles
 
-Given a two particles P and Q of radius r, at positions p and q with velocities v and u repectively in *frame n*, the particles will collide when they are travelling towards each other in *frame n* and in *frame n+1* the centres of the particle, at p + v and q + u  are within a distance 2r from each other or they are moving away from each other.
+Given a two particles P and Q of radius r, at positions p and q with velocities v and u repectively travelling towards each other in *frame n*. In *frame n+1* the centres of the particle are at p + v and q + u. Between *frame n* and frame n+1* the two particles would collide when there is a time t &lt;= 1 when the distance between the positions of the particles is 2r. See Fig 22.
 
-Since only the velocities along the line joining the centres are affected during the collision consider a system of three multually perpendicular axes one along the line joining the centres and the others in the plane with this line as its normal. Writing the velocities as vectors with components along these axes
-
-v = (dr, dt, dw) and u = (sr, st, sw)
-
-In *frame n*, the position of particle P is (px, py, pz) and the position of Q is (qx, qy, qz). During the time between *frame n* and *frame n+1* the particles overlap. At *frame n+1*, one particle may still be overlapping the other or the particles may have passed each other and are moving away. The 2D diagrams show the latter case but the calculations apply in all cases. Fig 22 indicates the particles passing through each other and also shows the point of contact.
-
-![Fig 22](/img/collide16.jpg)  
+![Fig 22](/img/collide25.jpg)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 22.
 
-The displacements dr and sr can be split into dr<sub>1</sub> and sr<sub>1</sub> which take the particles to the point of contact and dr<sub>2</sub> and sr<sub>2</sub> the remaining displacements.
+At time t, P is at p + vt and Q is at p + ut and P an Q will collide if there is a solution for t to the equation 
 
-Fig 24 shows the rearrangement of the component velocities and positions of the spheres when the collision is detected and component velocities along the line joining the centres are exchanged.
+(p + vt - (q + ut)).(p + vt - (q + ut)) = 4r<sup>2</sup>
 
-![Fig 23](/img/collide17.jpg)  
+with 0 &lt; t &lt;= 1
+
+This equation is a quadratic equation in t of the form at<sup>2</sup> + bt + c = 0
+
+(p + vt - (q + ut)).(p + vt - (q + ut)) = 4r<sup>2</sup>
+
+(p - q +(v - u)t).(p - q +(v - u)t)  = 4r<sup>2</sup>
+
+(p - q).(p - q) + 2(p - q).(v - u)t + (v -u).(v - u)t<sup>2</sup> = 4r<sup>2</sup>
+
+(v -u).(v - u)t<sup>2</sup> + 2(p - q).(v - u)t + (p - q).(p - q) - 4r<sup>2</sup>
+
+so a = (v -u).(v - u), b = 2(p - q).(v - u), c = (p - q).(p - q) - 4r<sup>2</sup>
+
+There will be a collision between *frame n* and *frame n+1* provided b<sup>2</sup> - 4ac &gt; 0. In this case there will be two solutions for t the smallest value being where the particles first touch and the other at the end of the overlap.
+
+Based on the above the following Playground shows two spheres and their paths. Should they collide their positions at first touch are shown. Their start positions and velocities may be set at lines 35 to 38.
+
+[Playground Example - First Contact](http://www.babylonjs-playground.com/#A4HZTV).
+
+### Reaction
+
+Since only the velocities along the line joining the centres of the particles are affected during the collision we need to consider axes along this radial line and a tangential line. The particles are at first contact at time t, with P at p + vt and Q at q + ut
+
+Let m = p + vt - (q + ut) and n = m/|m| a unit vector.
+
+Then v<sub>r</sub> = (v.n)n is the component of v along n, and u<sub>r</sub> = (u.n)n the component of u along n and after collision these components are swapped. The tangential components for P and Q before collision are v<sub>t</sub> = v - (v.n)n and u<sub>t</sub> = u - (u.n)n respectively.  
+After collision the velocity of  
+P is v<sub>a</sub> = u<sub>r</sub> + v<sub>t</sub> = (u.n)n + v - (v.n)n = v + ((u - v).n)n and that of  
+Q is u<sub>a</sub> = v<sub>r</sub> + u<sub>t</sub> = (v.n)n + u - (u.n)n = u + ((v - u).n)n
+
+Given that the particles collide between *frame n* and *frame n+1* what will the positions of P and Q be during *frame n+1*?
+
+In *frame n*, the position of particle P is (px, py, pz) and the position of Q is (qx, qy, qz). For some time t &lt;= 1 the particles will make first contact. Fig 23 shows the positions of P and Q for *frame n*, their positions at time t, and their positions for *frame n+1* when the collision is not detected. The radial and tangential components of their displacements (= velocities) are also shown upto and after first contact.
+
+![Fig 23](/img/collide16.jpg)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 23.
 
-For *frame n+1*, particle P is at  (px + dr<sub>1</sub> + sr<sub>2</sub>, py + dt, pz + dw) and Q is at (qx + sr<sub>1</sub> + dr<sub>2</sub>, qy + st, qz + sw). 
+The displacement v can be split in vt and v(1 - t) and u can be split into u and u(1 - t) which take the particles to the point of contact and after the first contact. During the frame transition it is at the point of contact the displacements along the line of centres are exchanged.
 
-After the collision the velocity of P is (sr, dt, dw) and that of Q is (dr, st, sw). Since before *frame n+1*, is displayed the velocities of P and Q will be added to the positions of P and Q and so we need these positions to have these velocities subtracted. See Fig 24 
+Fig 24 shows the rearrangement of the component displacements and positions of the spheres when the collision is detected and component velocities along the line joining the centres are exchanged. Just before *frame n+1* this gives
 
-![Fig 24](/img/collide24.jpg)  
+particle P at  p + v<sub>r</sub>t + v<sub>t</sub>t + u<sub>r</sub>(1 - t) + v<sub>t</sub>(1 - t) = p + v<sub>r</sub>t + u<sub>r</sub>(1 - t) + v<sub>t</sub>
+and particle Q at q + u<sub>r</sub>t + u<sub>t</sub>t + v<sub>r</sub>(1 - t) + u<sub>t</sub>(1 - t) = q + u<sub>r</sub>t + v<sub>r</sub>(1 - t) + u<sub>t</sub>  
+as in Fig 24
+
+![Fig 24](/img/collide17.jpg)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 24.
 
+However, since before *frame n+1*, is displayed the velocities of P and Q will be added to the positions of P and Q and so we need these positions to have their velocities subtracted so that the correct positions are displayed during *frame n+1*. See Fig 25 
+
+![Fig 25](/img/collide24.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 25.
+
 P  
-(px + dr<sub>1</sub> + sr<sub>2</sub>, py + dt, pz + dw) - (sr, dt, dw)
+p + v<sub>r</sub>t + u<sub>r</sub>(1 - t) + v<sub>t</sub> - (u<sub>r</sub> + v<sub>t</sub>)
 
-= (px + dr<sub>1</sub> + sr<sub>2</sub> - sr, py, pz)
+= p + v<sub>r</sub>t + u<sub>r</sub>(1 - t) - u<sub>r</sub>
 
-= (px + dr<sub>1</sub> + sr<sub>2</sub> - sr<sub>1</sub> - sr<sub>2</sub>, py, pz)
+= p + v<sub>r</sub>t + u<sub>r</sub>(1 - t) - u<sub>r</sub>t - u<sub>r</sub>(1 - t)
 
-= (px + dr<sub>1</sub> - sr<sub>1</sub>, py, pz)
+= p + v<sub>r</sub>t - u<sub>r</sub>t
+
+= p + (v<sub>r</sub> - u<sub>r</sub>)t
+
 
 Q  
-(qx + sr<sub>1</sub> + dr<sub>2</sub>, qy + st, qz + sw) - (dr, st, sw)
+q + u<sub>r</sub>t + v<sub>r</sub>(1 - t) + u<sub>t</sub> - (v<sub>r</sub> + u<sub>t</sub>)
 
-= (qx + sr<sub>1</sub> + dr<sub>2</sub> - dr, qy, qz)
+= q + u<sub>r</sub>t + v<sub>r</sub>(1 - t) - v<sub>r</sub>
 
-= (qx + sr<sub>1</sub> + dr<sub>2</sub> - dr<sub>1</sub> - dr<sub>2</sub>, qy, qz)
+= q + u<sub>r</sub>t + v<sub>r</sub>(1 - t) - v<sub>r</sub>t - v<sub>r</sub>(1 - t)
 
-= (qx + sr<sub>1</sub> - dr<sub>1</sub>, qy, qz)
+= q + u<sub>r</sub>t - v<sub>r</sub>t
 
-Again after a collision the positions of particles have to be recalculated before *frame n+1*.
+= q + (u<sub>r</sub> - v<sub>r</sub>)t
+
+
+After a collision these values are used to recalculate the  positions of particles before *frame n+1*.
+
+The following Playground shows the first contact position of two particles and their paths before and after collision. Star position and velocities may be set on lines 36 to 39.
+
+[Playground Example - First Contact Rebound](http://www.babylonjs-playground.com/#A4HZTV#1).
+
+This Playground fires particles randomly towards each other to see the effect when they collide.
+
+[Playground Example - Colliding Particles](http://www.babylonjs-playground.com/#A4HZTV#2).
