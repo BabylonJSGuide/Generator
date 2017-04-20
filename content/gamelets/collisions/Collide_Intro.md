@@ -20,7 +20,7 @@ To begin with the frame rate will be taken as constant throughout the animation 
 
 [Speed and Size Collision Issues](/gamelets/Issues.html)  
 [Simple Particle Collisions on a Grid](/gamelets/Grid_Moves.html)  
-[Slow Particle](/gamelets/Slow_Collide.html)  
+[Slow Particles](/gamelets/Slow_Collide.html)  
 [Freely Moving Particles](/gamelets/Free_Collide.html)  
 
 

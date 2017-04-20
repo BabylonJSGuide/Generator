@@ -109,4 +109,10 @@ Which one do you think gives the most random type movement?
 [Playground Example - Swap Velocities](http://www.babylonjs-playground.com/#CGSXR)  
 [Playground Example - Reverse Velocities](http://www.babylonjs-playground.com/#CGSXR#1)
 
+## Further Reading
+
+[Speed and Size Collision Issues](/gamelets/Issues.html)   
+[Slow Particles](/gamelets/Slow_Collide.html)  
+[Freely Moving Particles](/gamelets/Free_Collide.html) 
+
 

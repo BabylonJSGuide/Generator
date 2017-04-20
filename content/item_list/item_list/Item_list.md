@@ -10,6 +10,7 @@ PG_TITLE: Index
 [Animation - Introduction](/basics/Starter)  
 [Animation - Concurrent](/basics/Combine)  
 [Animation - Consecutive](/basics/Combine)  
+[Animation - Sequence](/gamelets/Sequence)  
 [Arc Rotate - Camera](/basics/Cameras)  
 
 **B**  
@@ -18,6 +19,10 @@ PG_TITLE: Index
 [Bump Map - Texture](/intermediate/Materials)  
 
 **C**  
+[Collisions - Introduction](/gamelets/Collide_Intro)  
+[Collisions - Issues](/gamelets/Issues)  
+[Collisions - Slow Moving Particles](/gamelets/Slow_Collide)  
+[Collisions - Freely Moving Particles](/gamelets/Free_collide)  
 [Cone - Create Mesh](/basics/Shapes)  
 [Constants - Side, Kind, Axis](/basics/Constants)  
 [Custom Extruded Shapes - Create Mesh](/intermediate/Parametric_Shapes)  

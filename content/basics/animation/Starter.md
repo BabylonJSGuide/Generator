@@ -193,10 +193,9 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 
 [Combining Animations](/basics/Combine.html)
 
-## Intermediate
-
-
 ## Advanced
+
+[A Sequence of Animations](/gamelets/Sequence.html)  
     
     
     

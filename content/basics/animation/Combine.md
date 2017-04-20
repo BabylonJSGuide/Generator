@@ -164,7 +164,6 @@ var nextAnimation = function() {
 
 [Introduction to Animating](/basics/Starter.html)
 
-## Intermediate
-
-
 ## Advanced
+
+[A Sequence of Animations](/gamelets/Sequence.html)  

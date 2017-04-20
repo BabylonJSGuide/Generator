@@ -148,10 +148,25 @@ q + u<sub>r</sub>t + v<sub>r</sub>(1 - t) + u<sub>t</sub> - (v<sub>r</sub> + u<s
 
 After a collision these values are used to recalculate the  positions of particles before *frame n+1*.
 
-The following Playground shows the first contact position of two particles and their paths before and after collision. Star position and velocities may be set on lines 36 to 39.
+The following Playground shows the first contact position of two particles and their paths before and after collision. Start position and velocities may be set on lines 36 to 39.
 
 [Playground Example - First Contact Rebound](http://www.babylonjs-playground.com/#A4HZTV#1).
 
 This Playground fires particles randomly towards each other to see the effect when they collide.
 
 [Playground Example - Colliding Particles](http://www.babylonjs-playground.com/#A4HZTV#2).
+
+## A Multitude of Particles
+
+Combining all of the above the following Playgrounds put many particles inside a box and have them collide with the box and each other.
+
+[Playground Example - Slow Moving Particles](http://www.babylonjs-playground.com/#HIM0WS)
+
+[Playground Example - Fast Moving Particles](http://www.babylonjs-playground.com/#HIM0WS#1)
+
+Maximum speeds, for both,  can be changed on lines 21 to 23.
+
+## Further Reading
+
+[Slow Particles](/gamelets/Slow_Collide.html)  
+

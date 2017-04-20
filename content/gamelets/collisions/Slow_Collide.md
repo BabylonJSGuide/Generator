@@ -59,3 +59,7 @@ A single red particle is included so that its reaction can be followed.
 ## Conclusion
 
 To produce a system of collisions using Newtonian physics the path of a particle between frames must be determined.
+
+## Further Reading
+
+[Freely Moving Particles](/gamelets/Free_Collide.html)  
