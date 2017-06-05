@@ -11,13 +11,11 @@ bends, and twist and turns are achieved depends on given parameters.
 
 ## Updatable
 
-Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated 
-with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/advanced/Updating_Vertices.html).
+Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/advanced/Updating_Vertices.html).
 
-When in addition the shape has an instance parameter in its options then its shape can be updated by using MeshBuilder with instance set to 
-the name of the shape. 
+When in addition the shape has an instance parameter in its options then its shape can be updated by using MeshBuilder with instance set to the name of the shape. 
 
-In prectice all the parametric shapes, except for the Lathe, can have their shape updated in this way by using the already created instance of the mesh.
+In prectice all the parametric shapes, except for the Lathe and Polygon (both Create and Extend), can have their shape updated in this way by using the already created instance of the mesh.
 
 
 ## Lines
@@ -234,6 +232,59 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 [A Playground Example of a Lathe](http://www.babylonjs-playground.com/#165IV6#12)
+
+#### Polygon
+You must set at least the _shape_ property.
+
+Example :
+```javascript
+var polygon = BABYLON.MeshBuilder.CreatePolygon("polygon", {shape: myShape, sideOrientation: BABYLON.Mesh.DOUBLESIDE, frontUVs: myFrontUVs, backUVs: myBackUVs}, scene);
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option**
+backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option**
+
+Both frontUVs and backUVs have the form Vector4(u0,v0,u1,v1) with 0&gt;=  u0,v0,u1,v1 &lt;= 1 and 
+(u0, v0) are the bottom left coordinates and (u1, v1) the top right coordinates of the clipping rectangle 
+of the image.
+
+[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+
+#### Extruded Polygon
+You must set at least the _shape_ and _depth_ properties.
+
+Example :
+```javascript
+var polygon = BABYLON.MeshBuilder.ExtrudePolygon("polygon", {shape: myShape, depth: 2, faceUV: myUVs}, scene);
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+depth|_(number)_  the depth of the extrusion **REQUIRED** |
+faceColors|_(Color4[])_ array of 3 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
+faceUV|_(Vector4[])_ array of 3 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+
+To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+
+face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
+
+[Playground Example of Extruded Polygon](http://www.babylonjs-playground.com/#RNCYVM#2)
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
 # Further Reading
 
