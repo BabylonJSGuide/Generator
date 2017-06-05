@@ -233,7 +233,7 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 [A Playground Example of a Lathe](http://www.babylonjs-playground.com/#165IV6#12)
 
-#### Polygon
+## Polygon
 You must set at least the _shape_ property.
 
 Example :
@@ -259,7 +259,7 @@ of the image.
 
 Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
-#### Extruded Polygon
+## Extruded Polygon
 You must set at least the _shape_ and _depth_ properties.
 
 Example :
