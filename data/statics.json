@@ -319,6 +319,10 @@
         {
           "title": "Simple Car Following Path",
           "filename": "Car_Path"
+        },
+        {
+          "title": "Build a House from a Floorplan",
+          "filename": "House"
         }
       ]
    },
