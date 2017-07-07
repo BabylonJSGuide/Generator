@@ -204,9 +204,15 @@ In the playground below see what happens when you make the vertices on the red f
 ### Notes on the Playground
 Since a material is no longer being used backFaceCulling cannot be set and so the camera will have to be rotated for the far facet to be seen. The far facet will remain black 
 whatever color is applied since all light is still being absorbed by this facet. When the scene starts the camera is very nearly full face on 
-to the facet and pointing in the dirrection the light is travelling. With the camera in this position most of the white light is reflected back into the camera as a highlight
+to the facet and pointing in the direction the light is travelling. With the camera in this position most of the white light is reflected back into the camera as a highlight
 and the facet is seen as almost white. As the camera is rotated around the facet will change from appearing as white to red as the highlight effect disipates. For a more 
 controlled lighting effects use a [material](/basics/Materials.html) as well as, or instead of, setting vertex colors.
+
+Adding a light with direction the reverse of the current one will light both sides.
+
+[Playground Example Both Sides Lit](http://www.babylonjs-playground.com/#VKBJN#104) 
+
+[Playground Example Both Sides Colour Variation](http://www.babylonjs-playground.com/#VKBJN#105) 
 
 ## Texture
 
